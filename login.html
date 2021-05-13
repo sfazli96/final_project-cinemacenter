@@ -1,45 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Cinema Center</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <style type="text/css">
-        .navbar{
-            margin-top: 55px;
-        }
-        body {
+    <head>
+        <link rel="stylesheet" type="text/css" href="login.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <title>Cinema Center</title>
+    </head>
+    
+    <body>
+        <!-- header -->
+        <header>
+          <nav class="navbar navbar-custom navbar-expand-lg navbar-dark" role="navigation">
+      
+            <!-- dropdown menu when screen size is small enough -->
+            <button class="navbar-toggler ml-auto pull" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- items of the header/dropdown menu -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-size: larger;">
+      
+              <!-- list of menu options left-aligned-->
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Movies</a>
+                </li>
+                <li class="nav-item pe-5">
+                  <a class="nav-link" href="#">Actors</a>
+                </li>              
+                <li class="nav-item" style="margin-top: 5px">
+                  <input id="searchBar" type="search" style="border-radius: 5px; min-width: 100px;" placeholder="Search for a movie"> 
+                </li>
 
-            background: url(images/cinema-logo-emblem-template-vector-19647659.jpg) no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-        }
+                <li class="nav-item ps-5">
+                  <a class="nav-link" href="#">Login/Register</a>
+                </li>                
+              </ul>
+              
+              <!-- tweet button right-aligned -->
+              <!-- <button class="mx-auto tweet-button" type="button">Tweet</button> -->
 
-        h1{
-            color:White;
-            padding-top: 30px;
-        }
-        img{
-            padding-top: 5px;
-            padding-bottom: -165px;
-        }
-    </style>
-</head>
-<body>
 
-<div class="nav" role="navigation">
-    <a id="left_side" href="#content-center">Home</a>
-    <a href="movies.html">Movies</a>
-    <a href="">Actors</a>
-    <a href="">Messages</a>
-    <a href="login.html">Login</a>
-    <a href="register.html">Register</a>
-  
-    <input id="searchBar" type="search" placeholder="Search in Movies"> 
-
-  </div>
-</body>
+            </div>
+          </nav>
+        </header>  
+        <div style="min-height: 600px;">
+            <p1> Test </p1>
+        </div>
+    </body>
 </html>                                		
