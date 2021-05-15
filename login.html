@@ -15,11 +15,15 @@
         <header>
           <nav class="navbar navbar-custom navbar-expand-lg navbar-dark" role="navigation">
       
+            <div class="navbar-nav">
+              <a class="nav-link" style="color: inherit;">Cinema Center</a>
+            </div>
+
             <!-- dropdown menu when screen size is small enough -->
             <button class="navbar-toggler ml-auto pull" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <!-- items of the header/dropdown menu -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-size: larger;">
       
@@ -35,7 +39,7 @@
                   <a class="nav-link" href="#">Actors</a>
                 </li>              
                 <li class="nav-item" style="margin-top: 5px">
-                  <input id="searchBar" type="search" style="border-radius: 5px; min-width: 100px;" placeholder="Search for a movie"> 
+                  <input id="searchBar" type="search" style="border-radius: 5px; min-width: 100px; padding-left: 5px;" placeholder="Search for a movie"> 
                 </li>
 
                 <li class="nav-item ps-5">
@@ -49,9 +53,77 @@
 
             </div>
           </nav>
-        </header>  
-        <div style="min-height: 600px;">
-            <p1> Test </p1>
+        </header>
+
+
+
+        <div class="user-registration-container">
+          <div class="user-registration-header-container">
+            <div class="user-registration-header">
+              <b>Cinema Center</b>
+            </div>          
+          </div>
+          <div class="user-registration-container user-registration-form">
+            <div class="user-registration-main-container">
+              <div class="user-registration-main-header">
+                Sign Up
+              </div>
+              <div class="user-registration-main">
+
+                <!--Username Input-->
+                <div class="user-reg-input-form-container">
+                  <label style="text-align: start;">Username:</label>
+                  <div class="user-reg-input-form">
+                    <input class="user-reg-input" id="user-reg-username" type="text" placeholder="">
+                  </div>
+                </div>
+
+                <!--Email Address Input-->
+                <div class="user-reg-input-form-container">
+                  <label style="text-align: start;">Email:</label>
+                  <div class="user-reg-input-form">
+                    <input class="user-reg-input" id="user-reg-email" type="email" placeholder="">
+                  </div>
+                </div>
+
+                <!-- Password Input -->
+                <div class="user-reg-input-form-container">
+                  <label style="text-align: start;">Password:</label>
+                  <div class="user-reg-input-form">
+                    <input class="user-reg-input" id="user-reg-password" type="password" placeholder="">
+                  </div>
+                </div>
+
+                <!-- Confirm Password Input -->
+                <div class="user-reg-input-form-container">
+                  <label style="text-align: start;">Confirm Password:</label>
+                  <div class="user-reg-input-form">
+                    <input class="user-reg-input" id="user-reg-confirm-password" type="password" placeholder="">
+                  </div>
+                </div>
+
+                <!-- First Name Input -->
+                <div class="user-reg-input-form-container">
+                  <label style="text-align: start;">First Name:</label>
+                  <div class="user-reg-input-form">
+                    <input class="user-reg-input" id="user-reg-first-name" type="text" placeholder="">
+                  </div>
+                </div>
+
+                <!-- Last Name Input -->
+                <div class="user-reg-input-form-container">
+                  <label style="text-align: start;">Last Name:</label>
+                  <div class="user-reg-input-form">
+                    <input class="user-reg-input" id="user-reg-last-name" type="text" placeholder="">
+                  </div>
+                </div>
+
+                <button type="button" id="user-reg-button" class="btn btn-primary" style="margin-top: 50px;">Sign Up</button>
+
+              </div>
+            </div>
+          </div>
         </div>
+
     </body>
 </html>                                		
