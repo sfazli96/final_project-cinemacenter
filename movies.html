@@ -5,19 +5,14 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!--    <script data-main="parseCSV.js" src="require.js"></script> 
+    <script src="node_modules/csvtojson/browser/csvtojson.min.js"></script>  -->
+
+
     <style type="text/css">
         .navbar{
             margin-top: 55px;
         }
-        body {
-
-            background: url(images/cinema-logo-emblem-template-vector-19647659.jpg) no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-        }
-
         h1{
             color:White;
             padding-top: 30px;
@@ -37,9 +32,18 @@
     <a href="">Messages</a>
     <a href="login.html">Login</a>
     <a href="register.html">Register</a>
-  
-    <input id="searchBar" type="search" placeholder="Search in Movies"> 
-
+  <div class="search-form">
+    <input 
+        type="text"
+        id="search"
+        class="form control form-control-lg"
+        placeholder="Search for Movies"
+    /> 
   </div>
+   <!-- <input id="searchBar" type="search" placeholder="Search in Movies">   -->
+    <div id="match-list"></div>
+</div>
+<script src="searchMovies.js"></script>
+
 </body>
 </html>                                		
