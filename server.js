@@ -1,4 +1,5 @@
 const express = require('express')
+const functions = require('firebase-functions')
 const app = express()
 const path = require('path')
 const port = 3000
@@ -15,4 +16,6 @@ app.get('/home', homeHandler.getHome);
 
 app.get('*', (req, res) => res.status(404).send('404 ERROR: page not found'));
 
-app.listen(port, function() { console.log("Server listening on port(" + port + ")")})
+// app.listen(port, function() { console.log("Server listening on port(" + port + ")")})
+
+exports.app = functions.https.onRequest(app);

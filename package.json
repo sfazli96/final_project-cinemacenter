@@ -12,6 +12,7 @@
     "config": "^3.3.6",
     "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
+    "firebase": "^8.6.2",
     "mongodb": "^3.6.7",
     "mongoose": "^5.12.10",
     "path": "^0.12.7"
