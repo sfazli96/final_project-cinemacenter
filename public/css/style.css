@@ -1,0 +1,74 @@
+/* TODO: style each page */
+
+body {
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    color: lightseagreen;
+}
+
+.navbar-custom {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: #483368 !important;
+}
+
+.room-list-container {
+    border: solid white 2.5px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+    max-width: 500px;
+}
+
+.room-list-room-details {
+    list-style-type: none;
+}
+
+.chatroom-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 500px;
+    width: 500px;
+    background-color: #191b1c;
+    border-radius: 10px;
+}
+
+.chatroom-messages {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 450px;
+    height: 420px;
+    color: white;
+    overflow-y: auto;
+}
+
+.chatroom-input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 60px;
+    width: 450px;
+    border-radius: 5px;
+}
+
+.chatroom-textarea {
+    height: 60px;
+    width: 450px;
+    border-radius: 5px;
+    border-style: none;
+}
