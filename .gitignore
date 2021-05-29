@@ -235,3 +235,14 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/windows
+IMDb movies.csv
+IMDb names.csv
+IMDb ratings.csv
+IMDb title_principals.csv
+IMDb movies.json
+IMDb names.json
+IMDb ratings.json
+IMDb movies2.json
+combined.json
+MovieGenre.json
+MovieGenre.csv
