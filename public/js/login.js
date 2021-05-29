@@ -26,6 +26,17 @@
         let password = document.getElementById('password').value
 
         firebase.auth().signInWithEmailAndPassword(email, password).catch(e=> {
+            if (document.getElementById("errorMessage") == null)
+            {
+                let p = document.createElement("p");
+                p.innerHTML = "Error: " + e.message;
+                p.id = "errorMessage";
+                document.getElementById('loginScreen').appendChild(p);   
+            }
+            else
+            {
+                document.getElementById('errorMessage').innerHTML = "Error: " + e.message;
+            }
             console.log(e)
         })
     }

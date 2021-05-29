@@ -73,22 +73,6 @@ form {
     }
   }
 
-  .nav-link{
-    color: #4ab3f4; 
-    font-weight: bold; 
-  }
-  
-  .navbar-custom{
-    display: flex;
-    flex-direction: row;
-    background-color: #483368;
-  }
-  
-  body {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    padding: 0;
-    margin: 0;
-    background-color: #191b1c !important;
-    color: white !important;
-    max-height: 1000px;
+  #errorMessage {
+    text-align: center;
   }
