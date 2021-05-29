@@ -14,6 +14,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/registration', (req, res) => res.sendFile(path.join(__dirname, '/public/registration.html')))
 
+app.get('/', homeHandler.getHome);
 app.get('/home', homeHandler.getHome);
 
 app.get('*', (req, res) => res.status(404).send('404 ERROR: page not found'));
