@@ -1,9 +1,9 @@
-const search = document.getElementById('search');
+const search = document.getElementById('searchbar');
 const matchList = document.getElementById('match-list');
 
 // Search IMDb names.json and filter it 
 const searchActors = async searchText => {
-    const res = await fetch('/public/IMDb names.json');
+    const res = await fetch('json/IMDb names.json');
   //  const res1 = await fetch('/IMDb movies.json');
     const names = await res.json();
 

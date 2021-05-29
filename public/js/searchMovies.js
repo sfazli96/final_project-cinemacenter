@@ -1,7 +1,7 @@
 //const csvtojson = require(['csvtojson'])
 //const fs = require('fs') // filesystem
 
-const search = document.getElementById('search');
+const search = document.getElementById('searchbar');
 const matchList = document.getElementById('match-list');
 //const csvfilepath = "IMDb movies.csv"
 
@@ -21,7 +21,7 @@ const matchList = document.getElementById('match-list');
 
 // Search IMDb movies.json and filter it 
 const searchMovies = async searchText => {
-    const res = await fetch('/public/IMDb movies.json');
+    const res = await fetch('json/IMDb movies.json');
     const movies = await res.json();
 
    // console.log(movies);
@@ -47,9 +47,8 @@ const outputHtml = matches => {
     if(matches.length > 0) {
         const html = matches.map(match => `
         <div class="card card-body mb-1">
-            <h4>${match.title} (${match.year}) ${match.description} ${match.genre} <span class="text-primary">${
-                match.capital
-            }</span></h4>
+            <h4>Title: ${match.title} Release Date: (${match.year}) Description: ${match.description} Genre: ${match.genre} <span class="text-primary">${match.capital}
+            </span></h4>
         </div>
         `).join('')
          //   console.log(html);
