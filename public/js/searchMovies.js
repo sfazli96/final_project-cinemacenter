@@ -37,6 +37,9 @@ const searchMovies = async searchText => {
        matchList.innerHTML =''; // This clears our search engine html, clears it
    }
 
+   matches = matches.sort(function(a, b) {
+       return a.year > b.year ? -1 : 1;
+   })
    console.log(matches);
 
    outputHtml(matches);      // This outputs the Html which how the regex matches
@@ -52,11 +55,11 @@ const outputHtml = matches => {
         // </div>
             const html = matches.map(match => `
                 <div class="card card-custom">
-                    <img src="images/cinema-logo-emblem-template-vector-19647659.jpg" class="card-img-top" alt="...">
+                    
                     <div class="card-body card-body-custom">
                         <h5 class="card-title">${match.title} (${match.year})</h5>
                         <p class="card-text">${match.description}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="/movie/${match.imdb_title_id}" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
         `).join('')

@@ -28,14 +28,14 @@ label {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 90%;
+    max-width: 90%;
     margin: 5%;
     overflow: auto;
 }
 
 .card-custom {
     width: 18rem;
-    margin-right: 5rem;
+    margin: 0.5rem 2.5rem; 
     background-color: #253036;
 }
 
