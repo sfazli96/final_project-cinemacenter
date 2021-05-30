@@ -44,12 +44,21 @@ const searchMovies = async searchText => {
 
 // Show the results in HTML 
 const outputHtml = matches => {
-    if(matches.length > 0) {
-        const html = matches.map(match => `
-        <div class="card card-body mb-1">
-            <h4>Title: ${match.title} Release Date: (${match.year}) Description: ${match.description} Genre: ${match.genre} <span class="text-primary">${match.capital}
-            </span></h4>
-        </div>
+    if (matches.length > 0) {
+        // const html = matches.map(match => `
+        // <div class="card card-body mb-1">
+        //     <h4>Title: ${match.title} Release Date: (${match.year}) Description: ${match.description} Genre: ${match.genre} <span class="text-primary">${match.capital}
+        //     </span></h4>
+        // </div>
+            const html = matches.map(match => `
+                <div class="card card-custom">
+                    <img src="images/cinema-logo-emblem-template-vector-19647659.jpg" class="card-img-top" alt="...">
+                    <div class="card-body card-body-custom">
+                        <h5 class="card-title">${match.title} (${match.year})</h5>
+                        <p class="card-text">${match.description}</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
         `).join('')
          //   console.log(html);
         matchList.innerHTML = html;
