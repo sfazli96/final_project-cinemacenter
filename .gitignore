@@ -9,3 +9,6 @@ IMDb movies2.json
 combined.json
 MovieGenre.json
 MovieGenre.csv
+tmdb_5000_movies.csv
+
+node_modules/
