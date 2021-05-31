@@ -1,0 +1,37 @@
+{
+  "name": "cinema-center",
+  "version": "1.0.0",
+  "description": "movie review website",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.3.6",
+    "cookie-parser": "^1.4.4",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "firebase": "^8.6.2",
+    "mongodb": "^3.6.7",
+    "mongoose": "^5.12.10",
+    "node-fetch": "^2.6.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "nodemon": "^2.0.2",
+    "stylelint": "^13.2.0",
+    "stylelint-config-standard": "^20.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CS-UCR/final_project-cinemacenter.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/CS-UCR/final_project-cinemacenter/issues"
+  },
+  "homepage": "https://github.com/CS-UCR/final_project-cinemacenter#readme"
+}

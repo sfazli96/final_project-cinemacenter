@@ -1,0 +1,44 @@
+/* TODO: style each page */
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #191b1c !important;
+    color: white !important;
+    max-height: 1000px;
+}
+
+label {
+    font-size: 0.75rem;
+}
+
+.nav-link {
+    color: #4ab3f4; 
+    font-weight: bold; 
+}
+
+.navbar-custom {
+    display: flex;
+    flex-direction: row;
+    background-color: #483368 !important;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 90%;
+    margin: 5%;
+    overflow: auto;
+}
+
+.card-custom {
+    width: 18rem;
+    margin: 0.5rem 2.5rem; 
+    background-color: #253036;
+}
+
+.card-body-custom {
+    background-color: #253036;
+}
