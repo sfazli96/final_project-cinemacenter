@@ -2,14 +2,14 @@ body
 {
     font-family: sans-serif;
     color: #3c3939;
-    background-color: #f1f1f1;
+    background-color: green;
 }
 
 .profile-card
 {
     width: 400px;
     margin: auto;
-    background: #fff;
+    background: green;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.5);
 }
 
