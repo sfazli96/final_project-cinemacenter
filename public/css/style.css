@@ -14,7 +14,8 @@ label {
 }
 
 .nav-link {
-    color: #4ab3f4; 
+    /*color: #4ab3f4; */
+    color: white;
     font-weight: bold; 
 }
 
