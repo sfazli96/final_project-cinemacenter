@@ -7,7 +7,7 @@ This project is a website available for any person taht is able to browse for a 
 ### Steps to run the server
 `step 1: Type npm install to install node modules dependencies`
 
-`step 2: Type npm run start to run the server`
+`step 2: Type npm run start`
 
 `step 3: Your server should be running properly. Viola!`
 
