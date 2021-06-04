@@ -32,7 +32,7 @@ app.use((req, res, next) => {
 });
 
 
-app.get('/movie/:movieID', movieHandler.getMovie);
+app.get('/movie/:movieID', movieHandler.getMovie, movieHandler.getMoviePoster);
 app.get('/name/:nameID', actorsHandler.getNames);
 
 app.get('*', (req, res) => res.status(404).send('404 ERROR: page not found'));
