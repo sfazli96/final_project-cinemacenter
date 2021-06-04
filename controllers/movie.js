@@ -24,8 +24,13 @@ function getMovie(req, res) {
         'genre': movie.genre,
         'description': movie.description,
         'avg_vote': movie.avg_vote,
+        'directors': movie.director,
+        'writers': movie.writer,
+        'actors': movie.actors,
     });
 }
+
+
 
 module.exports = {
     getMovie
