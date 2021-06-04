@@ -22,7 +22,12 @@ function getNames(req, res) {
         'name': name.name, 
         'height': name.height,
         'bio': name.bio, 
-        
+        'birth_details': name.birth_details,
+        'death_details': name.death_details,
+        'reason_of_death': name.reason_of_death,
+        'spouses': name.spouses,
+        'divorces': name.divorces,
+        'children': name.children,
     });
 }
 
