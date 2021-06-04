@@ -27,8 +27,14 @@ function getMovie(req, res) {
         'directors': movie.director,
         'writers': movie.writer,
         'actors': movie.actors,
+        'country': movie.country,
+        'language': movie.language,
+        'production_company': movie.production_company,
+
     });
 }
+
+
 
 
 
