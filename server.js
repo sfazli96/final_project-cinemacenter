@@ -18,7 +18,6 @@ const actorsHandler = require('./controllers/actors')
 const movieListHandler = require('./controllers/movieList')
 const loginHandler = require('./controllers/login')
 
-
 // serve static files
 app.use(express.static(path.join(__dirname, 'public')))
 
@@ -31,6 +30,8 @@ app.get('/movies', movieListHandler.getmovieList)
 app.get('/movieList', movieListHandler.getmovieList)
 app.get('/actors', actorsListHandler.getactorList)
 app.get('/actorList', actorsListHandler.getactorList)
+
+
 //app.get('/registration', (req, res) => res.sendFile(path.join(__dirname, '/public/registration.html')))
 //app.get('/movies', (req, res) => res.sendFile(path.join(__dirname, "/public/movies.html")))
 //app.get('/login', (req, res) => res.sendFile(path.join(__dirname, "/public/login.html")))

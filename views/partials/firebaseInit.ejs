@@ -49,15 +49,24 @@ https://firebase.google.com/docs/web/setup#available-libraries -->
                                 <a class="nav-link" id="usernameHeader">Logged in as: ${data.username}</a>
                             </li>     
 
-                            <li class="nav-item ps-5" id="profileButton">
-                            <a class="nav-link" href="profile">User Profile</a>
+                            <li class="nav-item ps-5">
+                            <a class="nav-link" id="profileButton" href="profile">User Profile</a>
                             </li>
                             
-                            <li class="nav-item ps-5" id="logoutButton">
-                            <a class="nav-link logout-button" href="logout">Logout</a>
+                            <li class="nav-item ps-5">
+                            <a class="nav-link" id="logoutButton" href="#">Logout</a>
                             </li>`;
                         document.getElementById('menu-container').innerHTML += html;
                     }
+                    // logout
+                    const logout = document.getElementById('logoutButton');
+                    logout.addEventListener('click', (e) => {
+                        e.preventDefault(); 
+                        console.log('clicked logout')
+                        auth.signOut().then(() => {
+                            alert('successfully signed out')
+                        })
+                    });                      
                 }
             })
         }
@@ -71,8 +80,10 @@ https://firebase.google.com/docs/web/setup#available-libraries -->
 
                     <li class="nav-item ps-5" id="registrationButton">
                         <a class="nav-link" href="registration">Sign Up</a>
-                    </li>`;    
-                document.getElementById('menu-container').innerHTML += html;        
+                    </li>
+                    `;   
+
+                document.getElementById('menu-container').innerHTML += html;                
             }
         }
     })
@@ -80,6 +91,7 @@ https://firebase.google.com/docs/web/setup#available-libraries -->
 </script>
 
 <!-- Compiled and minified JavaScript -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="/js/auth.js"></script>
-<script src="/js/register.js"></script>    -->
+<script src="/js/register.js"></script>
+<script src="/js/login.js"></script>
