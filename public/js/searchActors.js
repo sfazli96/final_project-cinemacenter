@@ -12,7 +12,7 @@ const searchActors = async searchText => {
    // Get match to current text input 
    let matches = names.filter(Name => {
        const regex = new RegExp(`^${searchText}`, 'gi');
-       return Name.name.match(regex) || Name.date_of_birth.match(regex);   // Match the movie title and the movie year
+       return Name.name.match(regex) || Name.date_of_birth.match(regex);   // Match the actors name and date of birth
    });
 
    if(searchText.length === 0) {
@@ -24,6 +24,20 @@ const searchActors = async searchText => {
 
    outputHtml(matches);      // This outputs the Html which how the regex matches
 
+};
+
+const movies = async  searchText => {
+    const res = await fetch('/public/IMDb movies.json');
+    const movies = await res.json();
+    var results = [];
+    var searchField = "title";
+    var searchVal = "year";
+    for (var i = 0; i < movies.list.length; i++)
+    {
+        if(movies.list[i][searchField] == searchVal) {
+            results.push(movies.list[i]);
+        }
+    }
 };
 
 
