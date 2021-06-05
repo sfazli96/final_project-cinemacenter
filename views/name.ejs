@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" type="text/css" href="../css/style.css">
-        <link rel="stylesheet" type="text/css" href="../css/profile-card.css">
+        <link rel="stylesheet" type="text/css" href="../css/movie.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
@@ -31,42 +31,43 @@
                 <!-- list of menu options left-aligned-->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="home.html">Home</a>
+                        <a class="nav-link" href="/home.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="movies.html">Movies</a>
+                        <a class="nav-link" href="/movies.html">Movies</a>
                     </li>
                     <li class="nav-item pe-5">
-                        <a class="nav-link" href="actors.html">Actors</a>
+                        <a class="nav-link" href="/actors.html">Actors</a>
                     </li>              
                     <li class="nav-item" style="margin-top: 5px">
                         <input id="searchbar" type="search" placeholder="Search for a movie">
                     </li>
 
                     <li class="nav-item ps-5">
-                        <a class="nav-link" href="login.html">Login</a>
+                        <a class="nav-link" href="/login.html">Login</a>
                     </li>
 
                     <li class="nav-item ps-5">
-                        <a class="nav-link" href="registration.html">Sign Up</a>
-                    </li>
-                    <li class="nav-item ps-5">
-                        <a class="nav-link" href="profile.html">User Profile</a>
+                        <a class="nav-link" href="/registration.html">Sign Up</a>
                     </li>
                 </ul>
+
             </div>
         </nav>
     </header>
+
     <div class="information_container">
-        <h1 style="text-align: center;">Username: <%= username %></h1>
-        <div class="card">
-            <p style="color: black;">Welcome <%= username %></p>
-            <p class="title">CEO</p>
-            <img src="../Captain-America.jpg" alt="John" style="100%">
-            <p>Harvard University</p>
-            <p><button>Contact</button></p>
-        </div>
-    </div>  
+        <h1>Name: <%= name %></h1>
+        <p>Height: <%= height %></p>
+        <h3>Bio: <%= bio %></h3>
+        <h4 style="text-align: center;">Born: <%= birth_details %></h4>
+        <h5 style="text-align: center;">Death Information: <%= death_details %></h4>
+        <h6 style="text-align: center;">Reason of Death: <%= reason_of_death %></h4>
+        <h7 style="text-align: center;">Spouses: <%= spouses %></h5>
+        <h8 style="text-align: center;">Divorces: <%= divorces %></h6>
+        <h9 style="text-align: center;">Children: <%= children %></h7>
+    </div>        
+
     </body>
 </html>                                		
 

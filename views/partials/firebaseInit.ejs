@@ -36,21 +36,50 @@ https://firebase.google.com/docs/web/setup#available-libraries -->
         We also want to display a user profile button along with a log out button
     */
     auth.onAuthStateChanged(user => {
-    if (user) {
-        const doc = db1.collection('users').doc(user.uid);
-        doc.get().then((obj) => {
-            if (!obj.exists) { console.log('Error: This user does not exist') }
-            else { console.log("Currently logged in user: " + obj.data()); }
-        })
-    }
-    else {
-        console.log('There is no user currently logged in')
-    }
+        if (user) {
+            const doc = db1.collection('users').doc(user.uid);
+            doc.get().then((obj) => {
+                if (!obj.exists) { console.log('Error: This user does not exist') }
+                else { 
+                    const data = obj.data();
+                    console.log("Currently logged in user: " + data);
+                    if (!document.getElementById('profileButton') && !document.getElementById('logoutButton')) {
+                        const html = `
+                            <li class="nav-item ps-5">
+                                <a class="nav-link" id="usernameHeader">Logged in as: ${data.username}</a>
+                            </li>     
+
+                            <li class="nav-item ps-5" id="profileButton">
+                            <a class="nav-link" href="profile">User Profile</a>
+                            </li>
+                            
+                            <li class="nav-item ps-5" id="logoutButton">
+                            <a class="nav-link logout-button" href="logout">Logout</a>
+                            </li>`;
+                        document.getElementById('menu-container').innerHTML += html;
+                    }
+                }
+            })
+        }
+        else {
+            console.log('There is no user currently logged in');
+            if (!document.getElementById('registrationButton') && !document.getElementById('loginButton')) {
+                const html = `
+                    <li class="nav-item ps-5" id="loginButton">
+                        <a class="nav-link" href="login">Login</a>
+                    </li>
+
+                    <li class="nav-item ps-5" id="registrationButton">
+                        <a class="nav-link" href="registration">Sign Up</a>
+                    </li>`;    
+                document.getElementById('menu-container').innerHTML += html;        
+            }
+        }
     })
 
 </script>
 
 <!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="../../public/js/auth.js"></script>
-<script src="../../js/register.js"></script>   
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/register.js"></script>    -->

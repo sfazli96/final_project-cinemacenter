@@ -43,3 +43,15 @@ label {
 .card-body-custom {
     background-color: #253036;
 }
+
+.logout-button {
+}
+
+.logout-button:hover {
+
+}   
+
+#usernameHeader {
+    font-size: 1rem;
+    color:white !important;
+}
