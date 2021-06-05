@@ -1,7 +1,6 @@
 const search = document.getElementById('searchbar');
 const matchList = document.getElementById('match-list');
 
-
 // Search IMDb movies.json and filter it 
 const searchMovies = async searchText => {
     const res = await fetch('json/IMDb movies.json');
@@ -46,5 +45,9 @@ const outputHtml = matches => {
     }
 };
 
-search.addEventListener('input', () => searchMovies(search.value));
+// search.addEventListener('input', () => searchMovies(search.value));
+search.addEventListener('input', function() {
+    console.log('test')
+})
+console.log(search)
 
