@@ -14,46 +14,7 @@
     <body>
       <!-- header -->
       <header>
-        <nav class="navbar navbar-custom navbar-expand-lg navbar-dark" role="navigation">
-
-            <div class="navbar-nav">
-                <a class="nav-link" style="color: inherit;">Cinema Center</a>
-            </div>
-
-            <!-- dropdown menu when screen size is small enough -->
-            <button class="navbar-toggler ml-auto pull" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- items of the header/dropdown menu -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-size: larger;">
-
-                <!-- list of menu options left-aligned-->
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/home.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/movies.html">Movies</a>
-                    </li>
-                    <li class="nav-item pe-5">
-                        <a class="nav-link" href="/actors.html">Actors</a>
-                    </li>              
-                    <li class="nav-item" style="margin-top: 5px">
-                        <input id="searchbar" type="search" placeholder="Search for a movie">
-                    </li>
-
-                    <li class="nav-item ps-5">
-                        <a class="nav-link" href="/login.html">Login</a>
-                    </li>
-
-                    <li class="nav-item ps-5">
-                        <a class="nav-link" href="/registration.html">Sign Up</a>
-                    </li>
-                </ul>
-
-            </div>
-        </nav>
+        <%- include('partials/header'); %>
     </header>
 
     <div class="information_container">
@@ -61,6 +22,13 @@
         <p>Released: <%= year %></p>
         <h3>Genre: <%= genre %></h3>
         <h4 style="text-align: center;">Description: <%= description %></h4>
+        <h5 style="text-align: center;">Directors: <%= directors %></h5>
+        <h6 style="text-align: center;">Writers: <%= writers %></h6>
+        <h7 style="text-align: center;">Actors: <%= actors %></h7>
+        <h8 style="text-align: center;">Country: <%= country %></h7>
+        <h9 style="text-align: center;">Language: <%= language %></h7>
+        <h10 style="text-align: center;">Production Company: <%= production_company %></h10>
+
     </div>        
 
     </body>
