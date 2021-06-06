@@ -5,6 +5,7 @@ var modal = document.getElementById('modal');
 var modalOverlay = document.querySelector('.modal-overlay');
 var description = document.getElementById('description');
 
+
 window.onload = () => {
   var addReview = document.getElementById('review-add-btn');
   addReview.id = 'review-add-btn';
