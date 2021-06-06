@@ -50,7 +50,7 @@ https://firebase.google.com/docs/web/setup#available-libraries -->
                             </li>     
 
                             <li class="nav-item ps-5">
-                            <a class="nav-link" id="profileButton" href="profile/${data.username}">User Profile</a>
+                            <a class="nav-link" id="profileButton" href="/profile/${data.username}">User Profile</a>
                             </li>
                             
                             <li class="nav-item ps-5">
@@ -65,6 +65,8 @@ https://firebase.google.com/docs/web/setup#available-libraries -->
                         console.log('clicked logout')
                         auth.signOut().then(() => {
                             alert('successfully signed out')
+                        }).then(() => {
+                            window.location = '/home';
                         })
                     });                      
                 }
