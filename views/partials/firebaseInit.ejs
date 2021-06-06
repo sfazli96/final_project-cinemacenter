@@ -58,6 +58,7 @@ https://firebase.google.com/docs/web/setup#available-libraries -->
                             </li>`;
                         document.getElementById('menu-container').innerHTML += html;
                     }
+
                     // logout
                     const logout = document.getElementById('logoutButton');
                     logout.addEventListener('click', (e) => {
@@ -87,6 +88,14 @@ https://firebase.google.com/docs/web/setup#available-libraries -->
 
                 document.getElementById('menu-container').innerHTML += html;                
             }
+        }
+        // temp fix for searching movies
+        const search = document.getElementById('searchbar')
+        const url = window.location.href;
+        if (url.substr(url.lastIndexOf("/") + 1) == 'movies')
+        {
+            console.log('test')
+            search.addEventListener('input', () => searchMovies(search.value));
         }
     })
 
