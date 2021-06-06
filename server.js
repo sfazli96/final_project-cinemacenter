@@ -40,6 +40,7 @@ app.get('/actorList', actorsListHandler.getactorList)
 //app.get('/profile', (req, res) => res.sendFile(path.join(__dirname, "/public/profile.html")))
 
 app.get('/profile/:username', profileHandler.getProfile);
+app.get('/profile/:first-name', profileHandler.getProfile);
 
 
 // app.use((req, res, next) => {
