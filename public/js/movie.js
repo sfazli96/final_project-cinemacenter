@@ -3,7 +3,10 @@
 let focusedElementBeforeModal;
 var modal = document.getElementById('modal');
 var modalOverlay = document.querySelector('.modal-overlay');
-var description = document.getElementById('description');
+var getLike = document.querySelector('.like');
+var getLikeNum = document.querySelector('.likeNum');
+var getDislike = document.querySelector('.dislike');
+var getdislikeNum = document.querySelector('.dislikeNum');
 
 
 window.onload = () => {
@@ -80,7 +83,7 @@ var openModal = () => {
 
 var submitAddReview = (e) => {
   // console.log(e);
-  console.log('Form subbmitted!');
+  console.log('Form submitted!');
   e.preventDefault();
   closeModal();
 };
@@ -168,3 +171,29 @@ var navRadioGroup = (evt) => {
     }
   }
 };
+
+let like = 0;
+
+increaseLike = () => {
+  like ++
+  getLikeNum.innerHTML = `${like}`
+}
+
+likeClick = () => {
+  increaseLike()
+}
+
+getLike.addEventListener(('click'), likeClick)
+
+let dislike = 0;
+
+decreaseLike = () => {
+  dislike ++
+  getdislikeNum.innerHTML = `${dislike}`
+}
+
+dislikeClick = () => {
+  decreaseLike()
+}
+
+getDislike.addEventListener(('click'), dislikeClick)
