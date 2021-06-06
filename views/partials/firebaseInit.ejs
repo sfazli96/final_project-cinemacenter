@@ -50,7 +50,7 @@ https://firebase.google.com/docs/web/setup#available-libraries -->
                             </li>     
 
                             <li class="nav-item ps-5">
-                            <a class="nav-link" id="profileButton" href="profile/${data.username}">User Profile</a>
+                            <a class="nav-link" id="profileButton" href="/profile/${data.username}">User Profile</a>
                             </li>
                             
                             <li class="nav-item ps-5">
@@ -58,6 +58,7 @@ https://firebase.google.com/docs/web/setup#available-libraries -->
                             </li>`;
                         document.getElementById('menu-container').innerHTML += html;
                     }
+
                     // logout
                     const logout = document.getElementById('logoutButton');
                     logout.addEventListener('click', (e) => {
@@ -65,6 +66,8 @@ https://firebase.google.com/docs/web/setup#available-libraries -->
                         console.log('clicked logout')
                         auth.signOut().then(() => {
                             alert('successfully signed out')
+                        }).then(() => {
+                            window.location = '/home';
                         })
                     });                      
                 }
@@ -85,6 +88,14 @@ https://firebase.google.com/docs/web/setup#available-libraries -->
 
                 document.getElementById('menu-container').innerHTML += html;                
             }
+        }
+        // temp fix for searching movies
+        const search = document.getElementById('searchbar')
+        const url = window.location.href;
+        if (url.substr(url.lastIndexOf("/") + 1) == 'movies')
+        {
+            console.log('test')
+            search.addEventListener('input', () => searchMovies(search.value));
         }
     })
 

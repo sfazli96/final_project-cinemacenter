@@ -15,39 +15,50 @@ auth.onAuthStateChanged(user => {
 })
 
 // signup
-if (document.getElementById('user-reg-button'))
-{
-  const signupForm = document.getElementById('user-reg-button')
-  signupForm.addEventListener('click', (e) => {
-    e.preventDefault();
-    
-    // get user info
-    const username = document.getElementById('user-reg-username').value
-    const email = document.getElementById('user-reg-email').value
-    const password = document.getElementById('user-reg-password').value
-    const fullName = document.getElementById('user-reg-first-name').value // fix later
-    
-    console.log(username)
-    console.log(email)
-    console.log(password)
-    console.log(fullName)
+function registerNewUser() {
+  // const signupForm = document.getElementById('user-reg-button')
+  // signupForm.addEventListener('click', (e) => {
+  //   e.preventDefault();
 
+  // get user info
+  const username = document.getElementById('user-reg-username').value
+  const email = document.getElementById('user-reg-email').value
+  const password = document.getElementById('user-reg-password').value
+  const confirmPassword = document.getElementById('user-reg-confirm-password').value
+  const firstName = document.getElementById('user-reg-first-name').value
+  const lastName = document.getElementById('user-reg-last-name').value
+  const occupation = document.getElementById('user-reg-occupation').value
+  const location = document.getElementById('user-reg-location').value
+  const favoriteGenre = document.getElementById('user-reg-genre').value
 
-    // sign up the user
-    auth.createUserWithEmailAndPassword(email, password).then(cred => {
-      return db1.collection('users').doc(cred.user.uid).set({
-          username: username,
-          fullName: fullName
-      });
-    }).then(() => {
-      // // close the signup modal & reset form
-      // const modal = document.querySelector('#modal-signup');
-      // M.Modal.getInstance(modal).close();
-      // signupForm.reset();
-      console.log('successfully added user with username: ' + username);
+  if (password != confirmPassword)
+  {
+    alert('error: passwords do not match');
+    return;
+  }
+
+  // sign up the user
+  auth.createUserWithEmailAndPassword(email, password).then(cred => {
+    return db1.collection('users').doc(cred.user.uid).set({
+      username: username,
+      firstName: firstName,
+      lastName: lastName,
+      location: location,
+      occupation: occupation,
+      favoriteGenre: favoriteGenre,
+      biography: "Your biography is empty. Edit your profile to let people know more about you!",
     });
+  })
+  .then(() => {
+    // // close the signup modal & reset form
+    // const modal = document.querySelector('#modal-signup');
+    // M.Modal.getInstance(modal).close();
+    // signupForm.reset();
+    console.log('successfully added user with username: ' + username);
+    window.location = '/home';
   });
 }
+
 
 // // logout
 // const logout = document.getElementById('logout-button');

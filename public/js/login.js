@@ -25,7 +25,12 @@ function LoginUser(){
     let email = document.getElementById('email').value
     let password = document.getElementById('password').value
 
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(e=> {
+    firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(() => {
+        alert('Successfully signed in')
+        window.location = '/home'
+    })
+    .catch(e=> {
         if (document.getElementById("errorMessage") == null)
         {
             let p = document.createElement("p");
