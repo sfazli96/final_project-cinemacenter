@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="../css/style.css">
         <link rel="stylesheet" type="text/css" href="../css/movie.css">
+        <link rel="stylesheet" type="text/css" href="../css/review-card.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
@@ -14,46 +15,7 @@
     <body>
       <!-- header -->
       <header>
-        <nav class="navbar navbar-custom navbar-expand-lg navbar-dark" role="navigation">
-
-            <div class="navbar-nav">
-                <a class="nav-link" style="color: inherit;">Cinema Center</a>
-            </div>
-
-            <!-- dropdown menu when screen size is small enough -->
-            <button class="navbar-toggler ml-auto pull" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- items of the header/dropdown menu -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-size: larger;">
-
-                <!-- list of menu options left-aligned-->
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/home.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/movies.html">Movies</a>
-                    </li>
-                    <li class="nav-item pe-5">
-                        <a class="nav-link" href="/actors.html">Actors</a>
-                    </li>              
-                    <li class="nav-item" style="margin-top: 5px">
-                        <input id="searchbar" type="search" placeholder="Search for a movie">
-                    </li>
-
-                    <li class="nav-item ps-5">
-                        <a class="nav-link" href="/login.html">Login</a>
-                    </li>
-
-                    <li class="nav-item ps-5">
-                        <a class="nav-link" href="/registration.html">Sign Up</a>
-                    </li>
-                </ul>
-
-            </div>
-        </nav>
+        <%- include('partials/header'); %>
     </header>
 
     <div class="information_container">
@@ -61,7 +23,77 @@
         <p>Released: <%= year %></p>
         <h3>Genre: <%= genre %></h3>
         <h4 style="text-align: center;">Description: <%= description %></h4>
+        <h5 style="text-align: center;">Directors: <%= directors %></h5>
+        <h6 style="text-align: center;">Writers: <%= writers %></h6>
+        <h7 style="text-align: center;">Actors: <%= actors %></h7>
+        <h8 style="text-align: center;">Country: <%= country %></h7>
+        <h9 style="text-align: center;">Language: <%= language %></h7>
+        <h10 style="text-align: center;">Production Company: <%= production_company %></h10>
     </div>        
+    <div class="review_section">
+        <h2>Add Review</h2>
+        <button id="review-add-btn" aria-label="add review" title="Add Review"></button>
+        <div class="blog-card">
+            <div class="meta">
+              
+            </div>
+            <div class="description">
+              
+            </div>
+          </div>
+      <br>
+         <div class="blog-card">
+            <div class="meta">
 
+            </div>
+            <div class="description">
+
+            </div>
+          </div>
+          
+          
+          
+        <div id="modal" role="dialog" aria-modal="true" aria-labelledby="add-review-header" class="">
+          <button class="close-btn" aria-label="close" title="Close">x</button>
+          <div id="review-form-container">
+            <h2 id="add-review-header">Add Review</h2>
+            <form id="review-form">
+              <div class="fieldset">
+                <label for="reviewName">Name</label>
+                <input name="reviewName" id="reviewName" required="">
+              </div>
+              <div class="fieldset">
+                <label>Rating</label>
+                <div class="rate">
+                  <input type="radio" id="star5" name="rate" value="5" onkeydown="navRadioGroup(event)" onfocus="setFocus(event)" required="">
+                  <label for="star5" title="5 stars">5 stars</label>
+                  <input type="radio" id="star4" name="rate" value="4" onkeydown="navRadioGroup(event)">
+                  <label for="star4" title="4 stars">4 stars</label>
+                  <input type="radio" id="star3" name="rate" value="3" onkeydown="navRadioGroup(event)">
+                  <label for="star3" title="3 stars">3 stars</label>
+                  <input type="radio" id="star2" name="rate" value="2" onkeydown="navRadioGroup(event)">
+                  <label for="star2" title="2 stars">2 stars</label>
+                  <input type="radio" id="star1" name="https://codepen.io/pen/rate" value="1" onkeydown="navRadioGroup(event)" onfocus="setFocus(event)">
+                  <label for="star1" title="1 star">1 star</label>
+                </div>
+              </div>
+
+              <div class="fieldset">
+                <label for="reviewComments">Comments</label>
+                <textarea name="reviewComments" id="reviewComments" cols="20" rows="5" required=""></textarea>
+              </div>
+              <div class="fieldset right">
+                <button id="submit-review-btn">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-overlay"></div>
+    
+     
+          
+</div> <!--Review Section ends here-->
     </body>
-</html>                                		
+</html>     
+<script src="../js/movie.js"></script>     
+                      		

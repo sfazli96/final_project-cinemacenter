@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/profile-card.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
@@ -41,18 +42,27 @@
                     <li class="nav-item" style="margin-top: 5px">
                         <input id="searchbar" type="search" placeholder="Search for a movie">
                     </li>
-
                     <li class="nav-item ps-5">
-                        <a class="nav-link" href="login.html">Login</a>
-                    </li>
-
-                    <li class="nav-item ps-5">
-                        <a class="nav-link" href="registration.html">Sign Up</a>
+                        <a class="nav-link" href="#">User Profile</a>
                     </li>
                 </ul>
-
             </div>
         </nav>
     </header>
+    <div class="information_container">
+        <h1 style="text-align: center;">Username: <%= username %></h1>
+        <div class="card">
+            <p2 id="firstName" style="text-align: center; color: black;"></p2>
+            <p3 id="lastName" style="text-align: center; color: black; position: absolute; right: 100px;"></p3>
+            <img src="../user.jpg" alt="John" style="100%">
+            <p4 id="location" style="text-align: center; color: black;"></p4>
+            <p5 id="favoriteGenre" style="text-align: center; color: black;"></p5>
+            <p6 id="biography" style="text-align: center; color: black;"></p6>
+        </div>
+    </div>
+    <h1 id="h1test" style="text-align: center;"></h1>  
     </body>
 </html>                                		
+
+<%- include('partials/firebaseInit'); %>
+<script src="../js/profile.js"></script>
