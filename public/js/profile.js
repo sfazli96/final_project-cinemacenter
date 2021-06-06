@@ -27,4 +27,36 @@ auth.onAuthStateChanged(user => {
     else {
         console.log('no user logged in')
     }
+
+    // const doc = db1.collection('users').doc(user.uid);
+    // doc.get().then((obj) => {
+    //     console.log(obj.data());
+    // })
+
+    const email = "johndoe@email.com"
+    const password = "test123"
+    const username = "johndoe"
+    const firstName = "John"
+    const lastName = "Doe"
+    const biography = "This is a sample biography."
+    const location = "United States"
+    const favoriteGenre = "Action"
+
+    // auth.createUserWithEmailAndPassword(email, password).then(cred => {
+    //     return db1.collection('users').doc(cred.user.uid).set({
+    //         username: username,
+    //         firstName: firstName,
+    //         lastName: lastName,
+    //         biography: biography,
+    //         location: location,
+    //         favoriteGenre: favoriteGenre,
+    //     });
+    //   }).then(() => {
+    //     // // close the signup modal & reset form
+    //     // const modal = document.querySelector('#modal-signup');
+    //     // M.Modal.getInstance(modal).close();
+    //     // signupForm.reset();
+    //     alert('successfully added user with username: ' + username);
+    //   });
+
 })

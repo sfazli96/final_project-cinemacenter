@@ -77,6 +77,30 @@
                   <input class="user-reg-input" id="user-reg-last-name" type="text" placeholder="">
                 </div>
               </div>
+
+              <!-- Occupation Input -->
+              <div class="user-reg-input-form-container">
+                <label style="text-align: start;">Occupation:</label>
+                <div class="user-reg-input-form">
+                  <input class="user-reg-input" id="user-reg-occupation" type="text" placeholder="">
+                </div>
+              </div>  
+
+              <!-- Location Input -->
+              <div class="user-reg-input-form-container">
+                <label style="text-align: start;">Location:</label>
+                <div class="user-reg-input-form">
+                  <input class="user-reg-input" id="user-reg-location" type="text" placeholder="">
+                </div>
+              </div>  
+              
+              <!-- Favorite Genre Input -->
+              <div class="user-reg-input-form-container">
+                <label style="text-align: start;">Favorite Genre:</label>
+                <div class="user-reg-input-form">
+                  <input class="user-reg-input" id="user-reg-genre" type="text" placeholder="">
+                </div>
+              </div>              
     
               <button type="button" id="user-reg-button" class="btn btn-primary" style="margin-top: 50px;">Sign Up</button>
     
@@ -86,4 +110,8 @@
       </div>
 
     </body>
-</html>                                		
+</html>                                	
+	
+<%- include('partials/firebaseInit'); %>
+
+<script>document.getElementById('user-reg-button').addEventListener('click', registerNewUser)</script>

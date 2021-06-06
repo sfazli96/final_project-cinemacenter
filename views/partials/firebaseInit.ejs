@@ -65,6 +65,8 @@ https://firebase.google.com/docs/web/setup#available-libraries -->
                         console.log('clicked logout')
                         auth.signOut().then(() => {
                             alert('successfully signed out')
+                        }).then(() => {
+                            window.location = '/home';
                         })
                     });                      
                 }
