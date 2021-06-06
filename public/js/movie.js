@@ -3,6 +3,7 @@
 let focusedElementBeforeModal;
 var modal = document.getElementById('modal');
 var modalOverlay = document.querySelector('.modal-overlay');
+var description = document.getElementById('description');
 
 window.onload = () => {
   var addReview = document.getElementById('review-add-btn');
@@ -29,7 +30,7 @@ var openModal = () => {
 
   // submit form
   var form = document.getElementById('review-form');
-  form.addEventListener('submit', submitAddReview, false);
+  form.addEventListener('submit', submitAddReview, true);
 
   // Find all focusable children
   var focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
@@ -107,9 +108,7 @@ var setFocus = (evt) => {
 };
 
 var navRadioGroup = (evt) => {
-  // console.log('key', evt.key, 'code', evt.code, 'which', evt.which);
-  // console.log(evt);
-  
+
   var star1 = document.getElementById('star1');  
   var star2 = document.getElementById('star2');  
   var star3 = document.getElementById('star3');  
