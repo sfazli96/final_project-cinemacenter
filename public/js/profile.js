@@ -9,18 +9,11 @@ auth.onAuthStateChanged(user => {
                 console.log('no doc exists') 
             }
             else {
-                const url = window.location.href;
-                let currentProfile = url.substr(url.lastIndexOf("/") + 1);
-                if (currentProfile != obj.data().username)
-                {
-                    console.log('this is not my profile!') 
-                    document.getElementById('h1test').innerText = "This is not your profile."
-                }
-                else {
-                    console.log('this is my profile! here is my data!');
-                    console.log(obj.data());
-                    document.getElementById('h1test').innerHTML = "This is your profile."
-                }
+                document.getElementById("firstName").innerHTML = obj.data().firstName;
+                document.getElementById("lastName").innerHTML = obj.data().lastName;
+                document.getElementById("location").innerHTML = obj.data().location;
+                document.getElementById("favoriteGenre").innerHTML = obj.data().favoriteGenre;
+                document.getElementById("biography").innerHTML = obj.data().biography;
             }
         })
     }
