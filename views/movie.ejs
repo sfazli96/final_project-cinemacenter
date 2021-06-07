@@ -75,7 +75,7 @@
                 <textarea name="reviewComments" id="reviewComments" cols="20" rows="5" required=""></textarea>
               </div>
               <div class="fieldset right">
-                <button id="submit-review-btn">Submit</button>
+                <button type="button" id="submit-review-btn" onclick="submitAddReview(document.getElementById('reviewComments').value, document.getElementById('reviewName').value)">Submit</button>
               </div>
             </form>
           </div>

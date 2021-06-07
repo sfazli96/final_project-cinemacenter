@@ -8,7 +8,6 @@ var getLikeNum = document.querySelector('.likeNum');
 var getDislike = document.querySelector('.dislike');
 var getdislikeNum = document.querySelector('.dislikeNum');
 
-
 window.onload = () => {
   var addReview = document.getElementById('review-add-btn');
   addReview.id = 'review-add-btn';
@@ -81,11 +80,16 @@ var openModal = () => {
   }
 };
 
-var submitAddReview = (e) => {
+function submitAddReview (reviewComments, reviewName, star1, star2, star3, star4, star5) {
   // console.log(e);
   console.log('Form submitted!');
-  e.preventDefault();
+  //reviewComments = document.getElementById("reviewComments").innerHTML;
+  console.log(reviewName);
+  console.log(reviewComments);
+
+ // reviewComments.preventDefault();
   closeModal();
+
 };
 
 var closeModal = () => {
@@ -172,6 +176,7 @@ var navRadioGroup = (evt) => {
   }
 };
 
+// This is for Likes and Dislikes
 let like = 0;
 
 increaseLike = () => {
