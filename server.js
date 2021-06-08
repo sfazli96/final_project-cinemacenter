@@ -10,6 +10,7 @@ app.set('view engine', 'ejs');
 
 // handlers
 const homeHandler = require('./controllers/index')
+//const homeHandler = require('./controllers/home')
 const registrationHandler = require('./controllers/registration')
 const movieHandler = require('./controllers/movies')
 const profileHandler = require('./controllers/profile')
