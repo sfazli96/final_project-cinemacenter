@@ -11,6 +11,27 @@ This project is a website available for any person taht is able to browse for a 
 
 `step 3: Your server should be running properly. Viola!`
 
+### Queries handled by the AI chatbox
+`Top 5 movies in 2020`
+
+`Top 5 movies in 2019`
+
+`Top 5 movies in 2018`
+
+`Top 5 movies in 2017`
+
+`Top 5 movies in 2016`
+
+`Top 5 movies in 2015`
+
+`Top 5 all-time movies`
+
+`Top 5 comedy movies`
+
+`Top 5 animated movies`
+
+`Top 5 upcoming movies`
+
 ## Authors and Contributor List 
 
 * Danz Moses - https://github.com/danzmoses
