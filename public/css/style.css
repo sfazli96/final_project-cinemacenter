@@ -67,3 +67,9 @@ label {
 .header-right {
     justify-items: right;
 }
+
+#review-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
