@@ -54,7 +54,6 @@ app.get('/name/:nameID', actorsHandler.getNames);
 
 app.get('*', (req, res) => res.status(404).send('404 ERROR: page not found'));
 
-
 app.listen(port, function() { console.log("Server listening on port(" + port + ")")})
 
 // exports.app = functions.https.onRequest(app);

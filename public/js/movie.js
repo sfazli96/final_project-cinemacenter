@@ -32,6 +32,7 @@ auth.onAuthStateChanged(user => {
     .catch((e) => {
         console.log("error: " + e);
     })
+    addReview()
 })
 
 function addReview() {
@@ -41,39 +42,46 @@ function addReview() {
     const reviews = doc.where('movieID', '==', movieID);
     reviews.get()
     .then((snapshot) => {
-        if (snapshot.empty) { console.log('there are no reviews for this movie') }
-        else {
-            const data = {
-                userID: "N5DN2a0C7Zh4TFOuXkzdxTbucuz2",
-                movieID: "tt0047034",
-                rating: 2,
-                review: "Wow, this movie is really bad"
-            }
-            let reviewAlreadyExists = false;
-            snapshot.forEach(doc => {
-                if (doc.data().userID == data.userID)
+        if (auth.currentUser != null)
+        {
+            const user = db1.collection('users').doc(auth.currentUser.uid);
+            user.get()
+            .then(() => {
+                const data = {
+                    userID: auth.currentUser.uid,
+                    movieID: movieID,
+                    rating: "temp",
+                    review: "temp",
+                }
+                let reviewAlreadyExists = false;
+                snapshot.forEach(doc => {
+                    if (doc.data().userID == data.userID)
+                    {
+                        console.log('error: this user already made a review for this movie')
+                        reviewAlreadyExists = true;
+                    }                
+                })
+                if (!reviewAlreadyExists)
                 {
-                    console.log('error: this user already made a review for this movie')
-                    reviewAlreadyExists = true;
-                }                
+                    db1.collection('reviews').add(data)
+                    .then((res) => {
+                        console.log('added review with id: ' + res.id)
+                    })
+                    .catch((e) => {
+                        console.log('error adding doc: ' + e);
+                    })
+                }
+                else { console.log('review already exists') }
             })
-            if (!reviewAlreadyExists)
-            {
-                db1.collection('reviews').add(data)
-                .then((res) => {
-                    console.log('added review with id: ' + res.id)
-                })
-                .catch((e) => {
-                    console.log('error adding doc: ' + e);
-                })
-            }
-            else { console.log('review alr exists') }
+        }
+        else
+        {
+            console.log("error: cannot add review because no user is logged in")
         }
     })
     .catch((e) => {
         console.log("error: " + e);
     })    
-
 }
 
 
