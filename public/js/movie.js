@@ -80,7 +80,7 @@ var openModal = () => {
   }
 };
 
-function submitAddReview (reviewComments, reviewName, star1, star2, star3, star4, star5) {
+function submitAddReview (reviewComments, reviewName) {
   // console.log(e);
   console.log('Form submitted!');
   //reviewComments = document.getElementById("reviewComments").innerHTML;
