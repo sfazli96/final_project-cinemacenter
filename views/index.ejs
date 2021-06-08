@@ -1,21 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Center</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" href="../static/css/chat.css">
+    <link rel="stylesheet" href="../static/css/home.css">
+    <link rel="stylesheet" href="../css/featured.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-        <title>Cinema Center</title>
-    </head>
+
+</head>
     
     <body>
       <!-- header -->
       <header>
           <%- include('partials/header'); %>
     </header>
-    </body>
+
+    <div class="container">
+        <div class="content-container">
+            <div class="featured-content"
+                style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('img/f-1.jpg');">
+                <img class="featured-title" src="img/f-t-1.png" alt="">
+                <p class="featured-desc">In 1858, a bounty-hunter named King Schultz seeks out a slave named Django and buys him because he 
+                    needs him to find some men he is looking for. After finding them, Django wants to find his wife, Broomhilda, 
+                    who along with him were sold separately by his former owner for trying to escape. Schultz offers to help him if he 
+                    chooses to stay with him and be his partner.</p>
+            </div>
+            <div class="movie-list-container">
+                <h1 class="movie-list-title">Movies</h1>
+                <div class="movie-list-wrapper">
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/1.jpeg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Theodore is a lonely man in the final stages of his divorce. He decides to purchase the new OS1, 
+                                which is advertised as the world's first artificially intelligent operating system.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/2.jpeg" alt="">
+                            <span class="movie-list-item-title">Star Wars</span>
+                            <p class="movie-list-item-desc">While the First Order continues to ravage the galaxy, Rey finalizes her training 
+                                as a Jedi. But danger suddenly rises from the ashes as the evil Emperor Palpatine mysteriously returns from the 
+                                dead.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/3.jpg" alt="">
+                            <span class="movie-list-item-title">Storm</span>
+                            <p class="movie-list-item-desc">Storm Voeten becomes the target of a hunt by the 
+                                Inquisition. Aided by Marieke, a mysterious girl living in the underground sewers of Antwerp, Storm is caught
+                                 in a race against time to save his father from death.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/4.jpg" alt="">
+                            <span class="movie-list-item-title">1917</span>
+                            <p class="movie-list-item-desc">April 1917, the Western Front. Two British soldiers are sent to deliver an 
+                                urgent message to an isolated regiment. If the message is not received in time the regiment will walk into 
+                                a trap and be massacred.</p>
+                        </div>
+                    </div>
+                    <!--<i class="fas fa-chevron-right arrow"></i> -->
+                </div>
+            </div>
+            <div class="movie-list-container">
+                <h1 class="movie-list-title">Movies</h1>
+                <div class="movie-list-wrapper">
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/8.jpg" alt="">
+                            <span class="movie-list-item-title">Oblivion</span>
+                            <p class="movie-list-item-desc">One of the few remaining drone repairmen assigned to Earth, its surface devastated 
+                                after decades of war with the alien Scavs, discovers a crashed spacecraft with contents that bring into question 
+                                everything he believed about the war.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/9.jpg" alt="">
+                            <span class="movie-list-item-title">Hobbit: Unexpected Journey</span>
+                            <p class="movie-list-item-desc">Bilbo Baggins is swept into a quest to reclaim the lost Dwarf Kingdom of Erebor from 
+                                the fearsome dragon Smaug.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/10.jpg" alt="">
+                            <span class="movie-list-item-title">Due Data</span>
+                            <p class="movie-list-item-desc">Businessman and first time father (to-be), Peter Highman, is in Atlanta heading home 
+                                to LA, where his wife is about to give birth, but after getting kicked off a plane, due to his seat mate, the pair
+                                 end up trying to hitch a ride to the west coast.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/11.jpg" alt="">
+                            <span class="movie-list-item-title">Kick-ass 2</span>
+                            <p class="movie-list-item-desc">After Kick-Ass' insane bravery inspires a new wave of self-made masked crusaders,
+                                 led by the badass Colonel Stars and Stripes, our hero joins them on patrol. When these amateur superheroes are
+                                  hunted down by Red Mist.</p>
+                        </div>
+                    </div>
+                   <!-- <i class="fas fa-chevron-right arrow"></i> -->
+                </div>
+            </div>
+            <div class="featured-content"
+                style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('img/f-2.jpg');">
+                <img class="featured-title" src="img/f-t-2.png" alt="">
+                <p class="featured-desc">An undead teenage girl befriends a blind boy that she meets in a forest she haunts and hunts in. Both have been victims of 
+                    unimaginable abuse, and each finds solace in the other. There may be a chance of light at the end of their tunnel, but it will come with a body 
+                    count.</p>
+            </div>
+            <div class="movie-list-container">
+                <h1 class="movie-list-title">Movies</h1>
+                <div class="movie-list-wrapper">
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/1.jpeg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Theodore is a lonely man in the final stages of his divorce. He decides to purchase the new OS1, 
+                                which is advertised as the world's first artificially intelligent operating system.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/2.jpeg" alt="">
+                            <span class="movie-list-item-title">Star Wars</span>
+                            <p class="movie-list-item-desc">While the First Order continues to ravage the galaxy, Rey finalizes her training 
+                                as a Jedi. But danger suddenly rises from the ashes as the evil Emperor Palpatine mysteriously returns from the 
+                                dead.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/15.jpg" alt="">
+                            <span class="movie-list-item-title">Lego Batman</span>
+                            <p class="movie-list-item-desc">There are big changes brewing in Gotham City, and if he wants to save the city from The Joker's hostile 
+                                takeover, Batman may have to drop the lone vigilante thing, try to work with others and maybe, just maybe, learn to lighten up.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/3.jpg" alt="">
+                            <span class="movie-list-item-title">Storm</span>
+                            <p class="movie-list-item-desc">Storm Voeten becomes the target of a hunt by the 
+                                Inquisition. Aided by Marieke, a mysterious girl living in the underground sewers of Antwerp, Storm is caught
+                                 in a race against time to save his father from death.</p>
+                        </div>
+                    </div>
+
+                 <!--   <i class="fas fa-chevron-right arrow"></i> -->
+                </div>
+            </div>
+            <div class="movie-list-container">
+                <h1 class="movie-list-title">Movies</h1>
+                <div class="movie-list-wrapper">
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/17.jpg" alt="">
+                            <span class="movie-list-item-title">Aquaman</span>
+                            <p class="movie-list-item-desc">Born upon the shores of the surface world, Arthur Curry (Jason Momoa) discovers that he is only half human,
+                                 with the other half of his blood being of Atlanteean descent, thus making him the rightful heir to the throne of Atlantis.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/18.jpg" alt="">
+                            <span class="movie-list-item-title">Fairy Tail-Dragon cry</span>
+                            <p class="movie-list-item-desc">"Dragon Cry" - it's a magic artifact, that power can destroy the world. For a long time she was kept in 
+                                the Kingdom of Fiore, but in the end was stolen by the Kingdom of Stella.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/19.jpg" alt="">
+                            <span class="movie-list-item-title">Spiderman-Homecoming</span>
+                            <p class="movie-list-item-desc">A young Peter Parker begins to navigate his newfound identity as the web-slinging super hero 
+                                Spider-Man. Thrilled by his experience with the Avengers, Peter returns home, where he lives with his Aunt May, under the watchful 
+                                eye of Tony Stark.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/7.jpg" alt="">
+                            <span class="movie-list-item-title">GOG</span>
+                            <p class="movie-list-item-desc">After stealing a mysterious orb in the far reaches of outer space, Peter Quill from Earth is now the main 
+                                target of a manhunt led by the villain.</p>
+                        </div>
+                    </div>
+                    <!-- <i class="fas fa-chevron-right arrow"></i> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/app.js"></script>
+
+    <!-- CHAT BAR BLOCK -->
+    <div class="chat-bar-collapsible">
+        <button id="chat-button" type="button" class="collapsible">Chat with us!
+            <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
+        </button>
+
+        <div class="content">
+            <div class="full-chat-block">
+                <!-- Message Container -->
+                <div class="outer-container">
+                    <div class="chat-container">
+                        <!-- Messages -->
+                        <div id="chatbox">
+                            <h5 id="chat-timestamp"></h5>
+                            <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                        </div>
+
+                        <!-- User input box -->
+                        <div class="chat-bar-input-block">
+                            <div id="userInput">
+                                <input id="textInput" class="input-box" type="text" name="msg"
+                                    placeholder="Tap 'Enter' to send a message">
+                                <p></p>
+                            </div>
+
+                            <div class="chat-bar-icons">
+                                <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                                    onclick="heartButton()"></i>
+                                <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                    onclick="sendButton()"></i>
+                            </div>
+                        </div>
+
+                        <div id="chat-bar-bottom">
+                            <p></p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../static/scripts/responses.js"></script>
+<script src="../static/scripts/chat.js"></script>
 </html>                              		
 
 <%- include('partials/firebaseInit'); %>
