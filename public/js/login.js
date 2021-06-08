@@ -47,10 +47,14 @@ function LoginUser(){
 }
 
 function LogoutUser(){
-    firebase.auth().signOut().then(()=> {
-        document.getElementById('loginScreen').style.display = "block"
-        document.getElementById('dashboard').style.display = "none"
-    }).catch(e=>{
+    firebase.auth().signOut()
+    .then(()=> {
+        alert('Successfully logged out')
+        window.location = '/home'
+        // document.getElementById('loginScreen').style.display = "block"
+        // document.getElementById('dashboard').style.display = "none"
+    })
+    .catch(e=>{
         console.log(e)
     })
 }

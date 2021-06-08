@@ -3,10 +3,6 @@
 let focusedElementBeforeModal;
 var modal = document.getElementById('modal');
 var modalOverlay = document.querySelector('.modal-overlay');
-var getLike = document.querySelector('.like');
-var getLikeNum = document.querySelector('.likeNum');
-var getDislike = document.querySelector('.dislike');
-var getdislikeNum = document.querySelector('.dislikeNum');
 
 window.onload = () => {
   var addReview = document.getElementById('review-add-btn');
@@ -88,6 +84,7 @@ function submitAddReview (reviewComments, reviewName) {
   console.log(reviewComments);
 
  // reviewComments.preventDefault();
+  addReview();
   closeModal();
 
 };
@@ -176,29 +173,102 @@ var navRadioGroup = (evt) => {
   }
 };
 
-// This is for Likes and Dislikes
-let like = 0;
 
-increaseLike = () => {
-  like ++
-  getLikeNum.innerHTML = `${like}`
+// get all reviews for the current movie and display them
+auth.onAuthStateChanged(user => {
+    console.log('in movie.js')
+    const url = window.location.href;
+    let movieID = url.substr(url.lastIndexOf("/") + 1);
+    console.log(movieID)
+    const doc = db1.collection('reviews');
+    const reviews = doc.where('movieID', '==', movieID);
+    reviews.get()
+    .then((snapshot) => {
+        if (snapshot.empty) { console.log('there are no reviews for this movie') }
+        else {
+            const users = db1.collection('users');
+            const div = document.getElementById('review-container');
+            snapshot.forEach(doc => {
+                const currentUser = users.doc(doc.data().userID);
+                currentUser.get()
+                .then((user) => {
+                    if (!user.exists) { }
+                    else {
+                        const html = `
+                        <div class="blog-card">
+                        <div class="meta"></div>
+                        <div class="description">
+                          <h1>Great Product!!</h1>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                          <br>
+                          <h2>${user.data().username}</h2>
+                          <p>${doc.data().review}()</p>
+                          ${console.log(doc.data().review)}
+                        </div>
+                      </div>
+                        `;
+                        div.innerHTML += html;
+                    }
+                })
+            })
+        }
+    })
+    .catch((e) => {
+        console.log("error: " + e);
+    })
+})
+
+function addReview() {
+  const url = window.location.href;
+  let movieID = url.substr(url.lastIndexOf("/") + 1);
+  const doc = db1.collection('reviews');
+  const reviews = doc.where('movieID', '==', movieID);
+  reviews.get()
+  .then((snapshot) => {
+      if (auth.currentUser != null)
+      {
+          const user = db1.collection('users').doc(auth.currentUser.uid);
+          user.get()
+          .then(() => {
+              const data = {
+                  userID: auth.currentUser.uid,
+                  movieID: movieID,
+                  rating: "temp",
+                  review: document.getElementById('reviewComments').value,
+              }
+              let reviewAlreadyExists = false;
+              snapshot.forEach(doc => {
+                  if (doc.data().userID == data.userID)
+                  {
+                      console.log('error: this user already made a review for this movie')
+                      reviewAlreadyExists = true;
+                  }
+              })
+              if (!reviewAlreadyExists)
+              {
+                  db1.collection('reviews').add(data)
+                  .then((res) => {
+                      console.log('added review with id: ' + res.id)
+                  })
+                  .catch((e) => {
+                      console.log('error adding doc: ' + e);
+                  })
+              }
+              else { console.log('review already exists') }
+          })
+      }
+      else
+      {
+          console.log("error: cannot add review because no user is logged in")
+      }
+  })
+  .catch((e) => {
+      console.log("error: " + e);
+  })
 }
 
-likeClick = () => {
-  increaseLike()
-}
 
-getLike.addEventListener(('click'), likeClick)
-
-let dislike = 0;
-
-decreaseLike = () => {
-  dislike ++
-  getdislikeNum.innerHTML = `${dislike}`
-}
-
-dislikeClick = () => {
-  decreaseLike()
-}
-
-getDislike.addEventListener(('click'), dislikeClick)

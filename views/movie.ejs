@@ -26,25 +26,29 @@
         <h5 style="text-align: center;">Directors: <%= directors %></h5>
         <h6 style="text-align: center;">Writers: <%= writers %></h6>
         <h7 style="text-align: center;">Actors: <%= actors %></h7>
-        <h8 style="text-align: center;">Country: <%= country %></h7>
-        <h9 style="text-align: center;">Language: <%= language %></h7>
+        <h8 style="text-align: center;">Country: <%= country %></h8>
+        <h9 style="text-align: center;">Language: <%= language %></h9>
         <h10 style="text-align: center;">Production Company: <%= production_company %></h10>
     </div>        
     <div class="review_section">
         <h2>Add a review</h2>
         <button id="review-add-btn" aria-label="add review" title="Add Review"></button>
-        <div class="blog-card">
+<!--        <div class="blog-card">
             <div class="meta"></div>
-            <div class="description"></div>
-          </div>
+            <div class="description">
+              <h1>Great Product!!</h1>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <br>
+              <h2>Adittya Dey</h2>
+              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+            </div>
+          </div> 
+        -->
       <br>
-         <div class="blog-card">
-            <div class="meta"></div>
-            <div class="description"></div>
-          </div>
-          
-          
-          
         <div id="modal" role="dialog" aria-modal="true" aria-labelledby="add-review-header" class="">
           <button class="close-btn" aria-label="close" title="Close">x</button>
           <div id="review-form-container">
@@ -80,17 +84,15 @@
             </form>
           </div>
         </div>
+        <div id="review-container">
+          
+        </div>
         <div class="modal-overlay"></div>
-    <div class="recievedBox">
-      <button class="like">Like <p class="likeNum">0</p></button>
-    </div>
-    <div class="recievedBox">
-      <button class="dislike">Dislike <p class="dislikeNum">0</p></button>
-    </div>
      
           
-</div> <!--Review Section ends here-->
+</div> <!--Review Section ends here-->                      		
     </body>
-</html>     
-<script src="../js/movie.js"></script>     
-                      		
+    <%- include('partials/firebaseInit'); %>
+</html>                                		
+
+<script src="/js/movie.js"></script>

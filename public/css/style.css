@@ -52,6 +52,24 @@ label {
 }   
 
 #usernameHeader {
-    font-size: 1rem;
+    margin: auto;
     color:white !important;
+}
+
+#usernameHeader:hover {
+    text-decoration: underline;
+}
+
+.header-left {
+    justify-items: left;
+}
+
+.header-right {
+    justify-items: right;
+}
+
+#review-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
