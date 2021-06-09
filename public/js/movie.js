@@ -127,10 +127,10 @@ function addReview() {
                 .catch((e) => {
                     console.log('error adding doc: ' + e);
                 })
+                .then(() => {location.reload();})
               }
               else { console.log('review already exists') }
           })
-          .then(() => { closeModal(); })
       }
       else
       {
