@@ -1,6 +1,9 @@
+var loggedInUID;
+
 // get all reviews for the current movie and display them
 auth.onAuthStateChanged(user => {
   if (user) {
+    loggedInUID = user.uid;
     const url = window.location.href;
     let movieID = url.substr(url.lastIndexOf("/") + 1);
     const doc = db1.collection('reviews');
@@ -66,8 +69,12 @@ auth.onAuthStateChanged(user => {
                       <div class="meta"></div>
                       <div class="description">
                         <br>
-                        <a href="/profile/${currentUser.data().username}">${currentUser.data().username}<a>
+                        <a class="reviewProfile" href="/profile/${currentUser.data().username}">${currentUser.data().username}</a>
                         <p>${doc.data().review}</p>
+                        <div>
+                          <label for="likeButton" style="color: black">Like?</label>
+                          <input type="checkbox" class="likeButton" name="likeButton" onchange="toggleLike(this)">
+                        </div>                      
                       </div>
                       <p1 class="likes" style="color: black">Likes: ${doc.data().likes}</p1>                      
                     </div>
@@ -333,3 +340,49 @@ var navRadioGroup = (evt) => {
   }
 
 };
+
+function toggleLike(checkbox) {
+
+  const url1 = checkbox.parentElement.parentElement.querySelector('a').href;
+  const username = url1.substr(url1.lastIndexOf("/") + 1);
+  const reviewsDoc = db1.collection('reviews');
+  const url2 = window.location.href;
+  let movieID = url2.substr(url2.lastIndexOf("/") + 1);
+  const reviews = reviewsDoc.where('movieID', '==', movieID);
+  reviews.get()
+    .then((snapshot) => {
+      snapshot.forEach((doc) => {
+        if (doc.data().username == username) {
+          if (checkbox.checked) {
+            reviewsDoc.doc(doc.id).update({likes: doc.data().likes + 1})
+            console.log('liked this review from: ' + doc.data().username)
+            const userDoc = db1.collection('users').doc(loggedInUID)
+            userDoc.get().then((obj) => {
+              console.log(obj.data().likedReviews);
+            })
+            userDoc.update({likedReviews: firebase.firestore.FieldValue.arrayUnion(doc.id)})
+            console.log('updated likedReviews for ' + loggedInUID)
+          }
+          else { 
+            reviewsDoc.doc(doc.id).update({likes: doc.data().likes - 1})
+            console.log('unliked this review from: ' + doc.data().username)
+            const userDoc = db1.collection('users').doc(loggedInUID)
+            userDoc.get().then((obj) => {
+              console.log(obj.data().likedReviews);
+            })
+            userDoc.update({likedReviews: firebase.firestore.FieldValue.arrayRemove(doc.id)})            
+          }
+        }
+      })
+    })
+    .then(console.log('something happened'))
+
+//   const doc = db1.collection('reviews');
+//   const reviews = doc.where('movieID', '==', movieID);
+//   reviews.get()
+//   .then((snapshot) => {
+
+    
+
+//   })  
+}
