@@ -1,10 +1,18 @@
 // get all reviews for the current movie and display them
 auth.onAuthStateChanged(user => {
   if (user) {
-    const getReview = db1.collection('reviews').where('userID', '==', user.uid)
-    getReview.get().then((reviews) => {
-      // console.log(reviews)
-      if (reviews.empty) {
+    const url = window.location.href;
+    let movieID = url.substr(url.lastIndexOf("/") + 1);
+    const doc = db1.collection('reviews');
+    const reviews = doc.where('movieID', '==', movieID);
+    reviews.get().then((reviews) => {
+      let userAlreadyMadeReview = false;
+      reviews.forEach(doc => {
+        if (doc.data().userID == user.uid) {
+          userAlreadyMadeReview = true;
+        }
+      })      
+      if (!userAlreadyMadeReview) {
         console.log('user has not made a review')
         document.getElementsByTagName('h2')[0].style = "display: inline-block;"
         document.getElementById('review-add-btn').style = "display: inline-block; "
@@ -52,6 +60,7 @@ auth.onAuthStateChanged(user => {
               .then((currentUser) => {
                   if (!currentUser.exists) { }
                   else {
+                      console.log(doc.data());
                       const html = `
                       <div class="blog-card">
                       <div class="meta"></div>
@@ -108,6 +117,7 @@ function addReview() {
                   movieID: movieID,
                   rating: rating,
                   review: document.getElementById('reviewComments').value,
+                  likes: 0,
               }
               let reviewAlreadyExists = false;
               snapshot.forEach(doc => {
