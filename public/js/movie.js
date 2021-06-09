@@ -1,32 +1,32 @@
 // get all reviews for the current movie and display them
 auth.onAuthStateChanged(user => {
-  let loggedInUserDoc = db1.collection('users').doc(user.uid);
-  loggedInUserDoc.get().then((obj) => {
-    if (user) {
-      const getReview = db1.collection('reviews').where('username', '==', obj.data().username)
-      getReview.get().then((reviews) => {
-        console.log(reviews)
-        if (reviews.empty) {
-          document.getElementsByTagName('h2')[0].style = "display: inline-block;"
-          document.getElementById('review-add-btn').style = "display: inline-block; "
+  if (user) {
+    const getReview = db1.collection('reviews').where('userID', '==', user.uid)
+    getReview.get().then((reviews) => {
+      // console.log(reviews)
+      if (reviews.empty) {
+        console.log('user has not made a review')
+        document.getElementsByTagName('h2')[0].style = "display: inline-block;"
+        document.getElementById('review-add-btn').style = "display: inline-block; "
+        db1.collection('users').doc(user.uid).get().then((obj) => {
           document.getElementById('reviewName').value = obj.data().username;
-        }
-        else {
-          console.log('user already made a review')
-          document.getElementsByTagName('h2')[0].style = "display: none;"
-          document.getElementById('review-add-btn').style = "display: none; "          
-        }
-      })
-    }
-    else {
-      document.getElementsByTagName('h2')[0].style = "display: none;"
-      document.getElementById('review-add-btn').style = "display: none; "
+        })
+      }
+      else {
+        console.log('user already made a review')
+        document.getElementsByTagName('h2')[0].style = "display: none;"
+        document.getElementById('review-add-btn').style = "display: none; "          
+      }
+    })
+  }
+  else {
+    document.getElementsByTagName('h2')[0].style = "display: none;"
+    document.getElementById('review-add-btn').style = "display: none; "
 
-      let h7 = document.createElement('h7');
-      h7.innerText = ('Please log in to review this movie')
-      document.getElementsByClassName('review_section')[0].appendChild(h7);
-    }
-  })
+    let h7 = document.createElement('h7');
+    h7.innerText = ('Please log in to review this movie')
+    document.getElementsByClassName('review_section')[0].prepend(h7);
+  }
   console.log('in movie.js')
   const url = window.location.href;
   let movieID = url.substr(url.lastIndexOf("/") + 1);
@@ -95,10 +95,18 @@ function addReview() {
           const user = db1.collection('users').doc(auth.currentUser.uid);
           user.get()
           .then(() => {
+              let rating = 1;
+              if (document.getElementById('star1').checked) { rating = 1; }
+              else if (document.getElementById('star2').checked) { rating = 2; }
+              else if (document.getElementById('star3').checked) { rating = 3; }
+              else if (document.getElementById('star4').checked) { rating = 4; }
+              else if (document.getElementById('star5').checked) { rating = 5; }
+              else { rating = 1; }
+
               const data = {
                   userID: auth.currentUser.uid,
                   movieID: movieID,
-                  rating: "temp",
+                  rating: rating,
                   review: document.getElementById('reviewComments').value,
               }
               let reviewAlreadyExists = false;
@@ -111,16 +119,18 @@ function addReview() {
               })
               if (!reviewAlreadyExists)
               {
-                  db1.collection('reviews').add(data)
-                  .then((res) => {
-                      console.log('added review with id: ' + res.id)
-                  })
-                  .catch((e) => {
-                      console.log('error adding doc: ' + e);
-                  })
+                db1.collection('reviews').add(data)
+                .then((res) => {
+                    console.log('added review with id: ' + res.id)
+                    console.log(data)
+                })
+                .catch((e) => {
+                    console.log('error adding doc: ' + e);
+                })
               }
               else { console.log('review already exists') }
           })
+          .then(() => { closeModal(); })
       }
       else
       {
@@ -221,13 +231,11 @@ function submitAddReview (reviewComments, reviewName) {
   // console.log(e);
   console.log('Form submitted!');
   //reviewComments = document.getElementById("reviewComments").innerHTML;
-  console.log(reviewName);
-  console.log(reviewComments);
+  // console.log(reviewName);
+  // console.log(reviewComments);
 
  // reviewComments.preventDefault();
   addReview();
-  closeModal();
-
 };
 
 var closeModal = () => {
@@ -249,7 +257,6 @@ var setFocus = (evt) => {
   if (!anyChecked) {
     var star1 = document.getElementById('star1');
     star1.focus();
-    // star1.checked = true;
   }
 };
 
@@ -312,6 +319,5 @@ var navRadioGroup = (evt) => {
       }
     }
   }
+
 };
-
-
