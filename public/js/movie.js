@@ -68,6 +68,9 @@ auth.onAuthStateChanged(user => {
                         <br>
                         <a href="/profile/${currentUser.data().username}">${currentUser.data().username}<a>
                         <p>${doc.data().review}</p>
+                        <button class="btn" id="green"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
+                        <button class="btn" id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
+                      
                       </div>
                     </div>
                       `;
@@ -331,3 +334,24 @@ var navRadioGroup = (evt) => {
   }
 
 };
+
+var btn1 = document.querySelector('#green');
+var btn2 = document.querySelector('#red');
+
+btn1.addEventListener('click', function() {
+  
+    if (btn2.classList.contains('red')) {
+      btn2.classList.remove('red');
+    } 
+  this.classList.toggle('green');
+  
+});
+
+btn2.addEventListener('click', function() {
+  
+    if (btn1.classList.contains('green')) {
+      btn1.classList.remove('green');
+    } 
+  this.classList.toggle('red');
+  
+});
