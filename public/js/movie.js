@@ -1,5 +1,32 @@
 // get all reviews for the current movie and display them
 auth.onAuthStateChanged(user => {
+  let loggedInUserDoc = db1.collection('users').doc(user.uid);
+  loggedInUserDoc.get().then((obj) => {
+    if (user) {
+      const getReview = db1.collection('reviews').where('username', '==', obj.data().username)
+      getReview.get().then((reviews) => {
+        console.log(reviews)
+        if (reviews.empty) {
+          document.getElementsByTagName('h2')[0].style = "display: inline-block;"
+          document.getElementById('review-add-btn').style = "display: inline-block; "
+          document.getElementById('reviewName').value = obj.data().username;
+        }
+        else {
+          console.log('user already made a review')
+          document.getElementsByTagName('h2')[0].style = "display: none;"
+          document.getElementById('review-add-btn').style = "display: none; "          
+        }
+      })
+    }
+    else {
+      document.getElementsByTagName('h2')[0].style = "display: none;"
+      document.getElementById('review-add-btn').style = "display: none; "
+
+      let h7 = document.createElement('h7');
+      h7.innerText = ('Please log in to review this movie')
+      document.getElementsByClassName('review_section')[0].appendChild(h7);
+    }
+  })
   console.log('in movie.js')
   const url = window.location.href;
   let movieID = url.substr(url.lastIndexOf("/") + 1);
@@ -8,34 +35,44 @@ auth.onAuthStateChanged(user => {
   const reviews = doc.where('movieID', '==', movieID);
   reviews.get()
   .then((snapshot) => {
-      if (snapshot.empty) { console.log('there are no reviews for this movie') }
+      if (snapshot.empty) {
+        console.log('there are no reviews for this movie') 
+        let new_h1 = document.createElement('h1');
+        new_h1.id = "no-reviews-h1"
+        new_h1.innerHTML = "There are no reviews for this movie!"
+        new_h1.style = "color: white; text-align: center; margin-top: 2%"
+        document.getElementsByClassName('review_section')[0].appendChild(new_h1);
+      }
       else {
           const users = db1.collection('users');
           const div = document.getElementById('review-container');
           snapshot.forEach(doc => {
-              const currentUser = users.doc(doc.data().userID);
-              currentUser.get()
-              .then((user) => {
-                  if (!user.exists) { }
+              const currentUserDoc = users.doc(doc.data().userID);
+              currentUserDoc.get()
+              .then((currentUser) => {
+                  if (!currentUser.exists) { }
                   else {
                       const html = `
                       <div class="blog-card">
                       <div class="meta"></div>
                       <div class="description">
-                        <h1>Great Product!!</h1>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
                         <br>
-                        <h2>${user.data().username}</h2>
-                        <p>${doc.data().review}()</p>
-                        ${console.log(doc.data().review)}
+                        <a href="/profile/${currentUser.data().username}">${currentUser.data().username}<a>
+                        <p>${doc.data().review}</p>
                       </div>
                     </div>
                       `;
                       div.innerHTML += html;
+                      let descriptions = document.getElementsByClassName('description')
+                      let currentReview = descriptions[descriptions.length - 1]
+                      let temp = 0;
+                      while (temp < doc.data().rating)
+                      {
+                        let star = document.createElement('span')
+                        star.className = "fa fa-star checked";                        
+                        currentReview.insertBefore(star, currentReview.firstChild);
+                        ++temp;
+                      }                      
                   }
               })
           })
@@ -121,6 +158,7 @@ var openModal = () => {
 
   // Listen for indicators to close the modal
   modalOverlay.addEventListener('click', closeModal);
+
   // Close btn
   var closeBtn = document.querySelector('.close-btn');
   closeBtn.addEventListener('click', closeModal);
@@ -141,6 +179,11 @@ var openModal = () => {
   // Show the modal and overlay
   modal.classList.add('show');
   modalOverlay.classList.add('show');
+
+  // let loggedInUserDoc = db1.collection('users').doc(user.uid);
+  // loggedInUserDoc.get().then((obj) => {
+  //   document.getElementById('reviewName').innerText = obj.data().username;
+  // })
 
   // Focus first child
   // firstTabStop.focus();

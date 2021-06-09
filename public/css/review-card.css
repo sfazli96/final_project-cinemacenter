@@ -5,7 +5,7 @@
   box-sizing: border-box;
    font-family: 'Raleway', sans-serif !important;
   width:80vw;
-  margin:0 auto;
+  margin: 15px auto;
 }
 .review_section *,
 .review_section *::before,
@@ -30,12 +30,14 @@
 }
 .review_section h2 {
   display: inline-block;
-  color: black;
+  color: white;
 }
 .review_section #review-add-btn {
   padding: 0;
+  margin-left: 10px;
   font-size: 1.6em;
   cursor: pointer;
+  display: none;
 }
 /* ====================== Review Form ====================== */
 .review_section #modal {
@@ -238,15 +240,15 @@
 	 box-sizing: border-box;
 }
 .review_section {
-	 background: #f1f1f1;
+	 background: inherit;
 }
  .blog-card {
 	 display: flex;
 	 flex-direction: column;
-	 margin 5px 0;
+	 margin: 5px 0;
 	 box-shadow: 0 3px 7px -1px rgba(0, 0, 0, .1);
 	 margin-bottom: 1.6%;
-	 background: #fff;
+	 background: white;
 	 line-height: 1.4;
 	 font-family: 'Raleway', sans-serif;
 	 border-radius: 5px;
@@ -268,31 +270,38 @@
 	 margin:0;
 }
 
- 
  .blog-card .description {
 	 padding: 1rem;
-	 background: #fff;
+	 /* background: #fff; */
+   background-color: inherit;
 	 position: relative;
 	 z-index: 1;
 }
- .blog-card .description h1, .blog-card .description h2 {
+ .blog-card .description a, .blog-card .description h2 {
 	    font-family: 'Raleway', sans-serif;
+      color: black;
+      text-decoration: none;
 }
- .blog-card .description h1 {
+ .blog-card .description a {
 	 line-height: 1;
 	 margin: 0;
 	 font-size: 1.7rem;
 }
+.blog-card .description a:hover {
+  text-decoration: underline;
+}
+
  .blog-card .description h2 {
-	 font-size: 1rem;
+	 font-size: 1.5rem;
 	 font-weight: 300;
-	 text-transform: uppercase;
-	 color: #a2a2a2;
+	 /* text-transform: uppercase; */
+	 color: black;
 	 margin-top: 5px;
 }
 
  
  .blog-card p:first-of-type {
+   font-size: 1.5rem;
 	 margin-top: 1.25rem;
 }
  .blog-card p:first-of-type:before {
@@ -319,7 +328,7 @@
 	}
 	 .blog-card .description:before {
 		 content: "";
-		 background: #fff;
+		 background: inherit;
 		 width: 30px;
 		 position: absolute;
 		 left: -10px;

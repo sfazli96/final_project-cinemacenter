@@ -1,6 +1,8 @@
 .information_container {
+    margin-top: 5%;
+    padding-bottom: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 5%;
+    border-bottom: solid white;
 }
