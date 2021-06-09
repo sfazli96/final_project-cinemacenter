@@ -5,6 +5,7 @@ auth.onAuthStateChanged(user => {
     doc.get().then((obj) => {
       if (!obj.exists) { console.log('no doc exists') }
       else {
+        console.log("Currently logged in user: ");
         console.log(obj.data());
       }
     })
