@@ -32,6 +32,26 @@ This project is a website available for any person taht is able to browse for a 
 
 `Top 5 upcoming movies`
 
+## Screenshots
+
+* Sign up page
+[![Signup.png](https://i.postimg.cc/SKHxVd3k/Signup.png)](https://postimg.cc/cKMWLRdb)
+
+* Home page
+[![Home-page.png](https://i.postimg.cc/R0Kk5TqM/Home-page.png)](https://postimg.cc/nsVRqBv5)
+
+* AI Chat-box
+[![AI-chatbox.png](https://i.postimg.cc/63hFT5dg/AI-chatbox.png)](https://postimg.cc/YGhds7Dz)
+
+* Movies page
+[![Movies.png](https://i.postimg.cc/3xD6mZXg/Movies.png)](https://postimg.cc/bZp3jkFJ)
+
+* Incorrect User authentication
+[![Incorrect-password.png](https://i.postimg.cc/9QpxGN4w/Incorrect-password.png)](https://postimg.cc/jDDQTc4R)
+
+* User Profile
+[![User-profile.png](https://i.postimg.cc/DzSq8C1T/User-profile.png)](https://postimg.cc/67N7PfHj)
+
 ## Authors and Contributor List 
 
 * Danz Moses - https://github.com/danzmoses
