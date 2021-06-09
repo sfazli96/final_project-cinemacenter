@@ -1,9 +1,11 @@
 var loggedInUID;
+var loggedInUserDoc;
 
 // get all reviews for the current movie and display them
 auth.onAuthStateChanged(user => {
   if (user) {
     loggedInUID = user.uid;
+    loggedInUserDoc = db1.collection('users').doc(loggedInUID);
     const url = window.location.href;
     let movieID = url.substr(url.lastIndexOf("/") + 1);
     const doc = db1.collection('reviews');
@@ -89,10 +91,28 @@ auth.onAuthStateChanged(user => {
                         star.className = "fa fa-star checked";                        
                         currentReview.insertBefore(star, currentReview.firstChild);
                         ++temp;
-                      }                      
+                      }
+                      // if review is already liked by the currently logged in user, check the box
+                      let likeButton = document.getElementsByClassName('likeButton')[document.getElementsByClassName('likeButton').length-1]
+                      loggedInUserDoc.get().then((obj) => {
+                        let alreadyLikedReview = false;
+                        for (let i = 0; i < obj.data().likedReviews.length; ++i) {
+                          if (obj.data().likedReviews[i] == doc.id)
+                          {
+                            console.log('user liked this review from ' + doc.data().username)
+                            alreadyLikedReview = true;
+                          }
+                        }
+                        if (alreadyLikedReview) { likeButton.checked = true; }
+                        else { likeButton.checked = false; }
+                      }) 
                   }
               })
           })
+          let temp = document.getElementsByClassName('likeButton');
+          console.log(temp)
+          for (let i = 0; i < temp.length; ++i)
+            console.log(temp[i].checked)
       }
   })
   .catch((e) => {
