@@ -60,7 +60,7 @@ auth.onAuthStateChanged(user => {
               .then((currentUser) => {
                   if (!currentUser.exists) { }
                   else {
-                      console.log(doc.data());
+                      // console.log(doc.data().likes);
                       const html = `
                       <div class="blog-card">
                       <div class="meta"></div>
@@ -69,6 +69,7 @@ auth.onAuthStateChanged(user => {
                         <a href="/profile/${currentUser.data().username}">${currentUser.data().username}<a>
                         <p>${doc.data().review}</p>
                       </div>
+                      <p1 class="likes" style="color: black">Likes: ${doc.data().likes}</p1>                      
                     </div>
                       `;
                       div.innerHTML += html;
@@ -103,7 +104,7 @@ function addReview() {
       {
           const user = db1.collection('users').doc(auth.currentUser.uid);
           user.get()
-          .then(() => {
+          .then((obj) => {
               let rating = 1;
               if (document.getElementById('star1').checked) { rating = 1; }
               else if (document.getElementById('star2').checked) { rating = 2; }
@@ -114,6 +115,7 @@ function addReview() {
 
               const data = {
                   userID: auth.currentUser.uid,
+                  username: obj.data().username,
                   movieID: movieID,
                   rating: rating,
                   review: document.getElementById('reviewComments').value,
