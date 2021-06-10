@@ -6,3 +6,23 @@
     align-items: center;
     border-bottom: solid white;
 }
+  
+button{
+cursor: pointer;
+outline: 0;
+color: #AAA;
+background-color: darkgray;
+
+}
+
+.btn:focus {
+outline: none;
+}
+
+.green{
+color: green;
+}
+
+.red{
+color: red;
+}

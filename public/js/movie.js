@@ -65,22 +65,7 @@ auth.onAuthStateChanged(user => {
               .then((currentUser) => {
                   if (!currentUser.exists) { }
                   else {
-                      // console.log(doc.data().likes);
-                      const html = `
-                      <div class="blog-card">
-                      <div class="meta"></div>
-                      <div class="description">
-                        <br>
-                        <a class="reviewProfile" href="/profile/${currentUser.data().username}">${currentUser.data().username}</a>
-                        <p>${doc.data().review}</p>              
-                        <button class="btn" id="green"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
-                        <button class="btn" id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
-                      
-                      </div>
-                      <p1 class="likes" style="color: black">Likes: ${doc.data().likes}</p1>                      
-                    </div>
-                      `;
-                      div.innerHTML += html;
+                      div.appendChild(createBlogCard(currentUser.data().username, doc.data().review, doc.data().likes));
                       let descriptions = document.getElementsByClassName('description')
                       let currentReview = descriptions[descriptions.length - 1]
                       let temp = 0;
@@ -91,6 +76,7 @@ auth.onAuthStateChanged(user => {
                         currentReview.insertBefore(star, currentReview.firstChild);
                         ++temp;
                       }
+
                       // if review is already liked by the currently logged in user, check the box
                       let likeButton = document.getElementsByClassName('likeButton')[document.getElementsByClassName('likeButton').length-1]
                       loggedInUserDoc.get().then((obj) => {
@@ -102,16 +88,24 @@ auth.onAuthStateChanged(user => {
                             alreadyLikedReview = true;
                           }
                         }
-                        if (alreadyLikedReview) { likeButton.checked = true; }
-                        else { likeButton.checked = false; }
-                      }) 
+                        if (alreadyLikedReview) { likeButton.style.color = 'green' }
+                        else { likeButton.style.color = 'black' }
+                      })
+                      likeButton.addEventListener('click', function() {
+                        toggleLike(likeButton);                        
+                        if (likeButton.style.color == 'green') {
+                          likeButton.style.color = "black" 
+                          likeButton.checked = false;
+                        }
+                        else {
+                          likeButton.style.color = 'green'
+                          likeButton.checked = true;
+                        }
+                      });
+                      // console.log(likeButton)
                   }
               })
           })
-          let temp = document.getElementsByClassName('likeButton');
-          console.log(temp)
-          for (let i = 0; i < temp.length; ++i)
-            console.log(temp[i].checked)
       }
   })
   .catch((e) => {
@@ -361,7 +355,8 @@ var navRadioGroup = (evt) => {
 };
 
 function toggleLike(checkbox) {
-
+  
+  const p1_likes = checkbox.parentElement.parentElement.lastElementChild;
   const url1 = checkbox.parentElement.parentElement.querySelector('a').href;
   const username = url1.substr(url1.lastIndexOf("/") + 1);
   const reviewsDoc = db1.collection('reviews');
@@ -372,6 +367,7 @@ function toggleLike(checkbox) {
     .then((snapshot) => {
       snapshot.forEach((doc) => {
         if (doc.data().username == username) {
+          let currentLikes = doc.data().likes;
           if (checkbox.checked) {
             reviewsDoc.doc(doc.id).update({likes: doc.data().likes + 1})
             console.log('liked this review from: ' + doc.data().username)
@@ -380,10 +376,14 @@ function toggleLike(checkbox) {
               console.log(obj.data().likedReviews);
             })
             userDoc.update({likedReviews: firebase.firestore.FieldValue.arrayUnion(doc.id)})
+            currentLikes++;
+            p1_likes.innerText = "Likes: " + currentLikes;
             console.log('updated likedReviews for ' + loggedInUID)
           }
           else { 
             reviewsDoc.doc(doc.id).update({likes: doc.data().likes - 1})
+            currentLikes--;
+            p1_likes.innerText = "Likes: " + currentLikes;
             console.log('unliked this review from: ' + doc.data().username)
             const userDoc = db1.collection('users').doc(loggedInUID)
             userDoc.get().then((obj) => {
@@ -405,23 +405,61 @@ function toggleLike(checkbox) {
 
 //   })  
 }
-var btn1 = document.querySelector('#green');
-var btn2 = document.querySelector('#red');
 
-btn1.addEventListener('click', function() {
-  
-    if (btn2.classList.contains('red')) {
-      btn2.classList.remove('red');
-    } 
-  this.classList.toggle('green');
-  
-});
 
-btn2.addEventListener('click', function() {
+function toggleColor(button) {
+  if (button.style.color == 'red')
+    button.style.color == 'none'
+  else
+    button.style.color == 'red'
+}
+// var btn1 = document.querySelector('#green');
+// var btn2 = document.querySelector('#red');
+
+
+
+// btn2.addEventListener('click', function() {
   
-    if (btn1.classList.contains('green')) {
-      btn1.classList.remove('green');
-    } 
-  this.classList.toggle('red');
+//     if (btn1.classList.contains('green')) {
+//       btn1.classList.remove('green');
+//     } 
+//   this.classList.toggle('red');
   
-});
+// });
+
+function createBlogCard(username, review, likes)
+{
+  let blogCard = document.createElement('div'); blogCard.className = 'blog-card';
+  let meta = document.createElement('div'); meta.className = 'meta';
+  let description = document.createElement('div'); description.className = 'description';
+  let linebreak = document.createElement('br');
+  let a1 = document.createElement('a'); a1.className = 'reviewProfile'; a1.href = "/profile/" + username; a1.innerText = username;
+  let p1 = document.createElement('p'); p1.innerText = review;
+  let btn = document.createElement('button'); btn.className = 'btn likeButton green'; btn.checked = true;
+  btn.style.backgroundColor = "lightgrey"
+  let i1 = document.createElement('i'); i1.className = "fa fa-thumbs-up fa-lg"; i1.ariaHidden = true;
+  btn.appendChild(i1);
+  let p1_likes = document.createElement('p1'); p1_likes.style = "color: black"; p1_likes.innerText = "Likes: " + likes;
+
+  description.appendChild(linebreak);
+  description.appendChild(a1);
+  description.appendChild(p1);
+  description.appendChild(btn);
+  
+  blogCard.appendChild(meta);
+  blogCard.appendChild(description);
+  blogCard.appendChild(p1_likes);
+  return blogCard;
+
+}
+
+// {/* <div class="blog-card">
+// <div class="meta"></div>
+// <div class="description">
+//   <br>
+//   <a class="reviewProfile" href="/profile/${currentUser.data().username}">${currentUser.data().username}</a>
+//   <p>${doc.data().review}</p>              
+//   <button class="btn likeButton"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>                      
+// </div>
+// <p1 class="likes" style="color: black">Likes: ${doc.data().likes}</p1>                      
+// </div> */}
