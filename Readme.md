@@ -53,6 +53,10 @@ This project is a website available for any person that is able to browse for a 
 
 [![User-profile.png](https://i.postimg.cc/DzSq8C1T/User-profile.png)](https://postimg.cc/67N7PfHj)
 
+* Social Interaction 
+
+![image](https://user-images.githubusercontent.com/43709736/121599016-567bef80-c9f7-11eb-97b3-8db8009d0c30.png)
+
 
 ### Extra Features 
 
@@ -60,9 +64,15 @@ This project is a website available for any person that is able to browse for a 
 
 [![Movies.png](https://i.postimg.cc/3xD6mZXg/Movies.png)](https://postimg.cc/bZp3jkFJ)
 
+![image](https://user-images.githubusercontent.com/43709736/121599016-567bef80-c9f7-11eb-97b3-8db8009d0c30.png)
+
+
 * Actors Search System Page
 
 ![image](https://user-images.githubusercontent.com/43709736/121597970-24b65900-c9f6-11eb-9a15-b5e9d4dfa950.png)
+
+![image](https://user-images.githubusercontent.com/43709736/121599128-7b706280-c9f7-11eb-8fd0-25fe76c23fdd.png)
+
 
 * AI Chat-box
 
