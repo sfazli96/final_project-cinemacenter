@@ -72,11 +72,10 @@ auth.onAuthStateChanged(user => {
                       <div class="description">
                         <br>
                         <a class="reviewProfile" href="/profile/${currentUser.data().username}">${currentUser.data().username}</a>
-                        <p>${doc.data().review}</p>
-                        <div>
-                          <label for="likeButton" style="color: black">Like?</label>
-                          <input type="checkbox" class="likeButton" name="likeButton" onchange="toggleLike(this)">
-                        </div>                      
+                        <p>${doc.data().review}</p>              
+                        <button class="btn" id="green"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
+                        <button class="btn" id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
+                      
                       </div>
                       <p1 class="likes" style="color: black">Likes: ${doc.data().likes}</p1>                      
                     </div>
@@ -406,3 +405,23 @@ function toggleLike(checkbox) {
 
 //   })  
 }
+var btn1 = document.querySelector('#green');
+var btn2 = document.querySelector('#red');
+
+btn1.addEventListener('click', function() {
+  
+    if (btn2.classList.contains('red')) {
+      btn2.classList.remove('red');
+    } 
+  this.classList.toggle('green');
+  
+});
+
+btn2.addEventListener('click', function() {
+  
+    if (btn1.classList.contains('green')) {
+      btn1.classList.remove('green');
+    } 
+  this.classList.toggle('red');
+  
+});
