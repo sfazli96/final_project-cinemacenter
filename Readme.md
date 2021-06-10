@@ -57,6 +57,7 @@ https://drive.google.com/drive/folders/1Rpm_GR7gxBqe39H9yKer-ueIE0uuoMCx?usp=sha
 
 * `Other users can leave a thumbs up like to the reviews that are posted. `
 
+* `When a user reviews a movie, their review of the movie gets stored inside the ‘reviews’ collection in our database, hosted by Firebase.`
 
 
 ### Queries handled by the AI chatbox
