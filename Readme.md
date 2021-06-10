@@ -25,27 +25,30 @@ https://drive.google.com/drive/folders/1Rpm_GR7gxBqe39H9yKer-ueIE0uuoMCx?usp=sha
 
 1. User Profiling: <br>
 
-        A new user can sign-up on the website by providing some basic information such as their name, email, username, location, favorite movie genre, and they can set a their password. 
+  *  `A new user can sign-up on the website by providing some basic information such as their name, email, username, location, favorite movie genre, and they can set a their password.`
 
-       When a user creates an account, their  information is stored inside the ‘users’ collection in our database, hosted by Firebase.
+ *   `When a user creates an account, their  information is stored inside the ‘users’ collection in our database, hosted by Firebase.`
+
 
 2. User Authentication: <br>
 
-        A user can login to their account using the email, and password they set during sign-up.
 
-           Once a user is logged in, they can now comment and leave ratings on the movies. These reviews can be seen by all other users who land onto the specific page.
+*    `A user can login to their account using the email, and password they set during sign-up.`
+
+ *   `Once a user is logged in, they can now comment and leave ratings on the movies. These reviews can be seen by all other users who land onto the specific page.`
 
 3. AI Chat-box: <br>
 
-        A user can use the chatbox to get some quick information, regarding the best movies in a specific year or in particular genre.
+ *   `A user can use the chatbox to get some quick information, regarding the best movies in a specific year or in particular genre.`
 
-        The chat-box currently only handles some specific queries, they can be found on the readme.md file.
+*   `The chat-box currently only handles some specific queries, they can be found on the readme.md file.   `
+
 
 4. Social Interaction: <br>
 
-        A user can review, leave a like and star of the movie that they enjoyed.
+* `A user can review, leave a like and star of the movie that they enjoyed.`
 
-        Other users can leave a thumbs up like to the reviews that are posted. 
+* `Other users can leave a thumbs up like to the reviews that are posted. `
 
 
 
