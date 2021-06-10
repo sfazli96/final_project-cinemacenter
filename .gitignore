@@ -248,5 +248,6 @@ combined.json
 MovieGenre.json
 MovieGenre.csv
 tmdb_5000_movies.csv
+serviceAccountKey.json
 
 node_modules/
