@@ -4,12 +4,15 @@ final_project-cinemacenter created by Github Classroom
 ### Description 
 This project is a website available for any person that is able to browse for a movie or actor that they can get more information on. It is also a data store that analyzes information about movies, actors, profiles, etc. It is being compared to all other movies or actors as well. For this project it uses data from movies, names and genre. On the website, the person can chat messages and leave a comment/review on that movie or actor.
 
+
+
+
 ### Steps to run the server
-`step 1: Type npm install to install node modules dependencies`
+ step 1: Type `npm install` to install node modules dependencies
 
-`step 2: Type npm run start`
+ step 2: Type `npm run start`
 
-`step 3: Your server should be running properly. Viola!`
+ step 3: Your server should be running properly. Viola!
 
 ### Queries handled by the AI chatbox
 `Top 5 movies in 2020`
@@ -42,10 +45,6 @@ This project is a website available for any person that is able to browse for a 
 
 [![Home-page.png](https://i.postimg.cc/R0Kk5TqM/Home-page.png)](https://postimg.cc/nsVRqBv5)
 
-* Movies page
-
-[![Movies.png](https://i.postimg.cc/3xD6mZXg/Movies.png)](https://postimg.cc/bZp3jkFJ)
-
 * Incorrect User authentication
 
 [![Incorrect-password.png](https://i.postimg.cc/9QpxGN4w/Incorrect-password.png)](https://postimg.cc/jDDQTc4R)
@@ -59,7 +58,7 @@ This project is a website available for any person that is able to browse for a 
 
 * Movie Search System Page
 
-![image](https://user-images.githubusercontent.com/43709736/121597860-09e3e480-c9f6-11eb-9c7c-bc6717ee85ca.png)
+[![Movies.png](https://i.postimg.cc/3xD6mZXg/Movies.png)](https://postimg.cc/bZp3jkFJ)
 
 * Actors Search System Page
 
