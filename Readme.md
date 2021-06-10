@@ -8,12 +8,15 @@ https://bit.ly/3pFWXOZ
 ### Description 
 This project is a website available for any person that is able to browse for a movie or actor that they can get more information on. It is also a data store that analyzes information about movies, actors, profiles, etc. It is being compared to all other movies or actors as well. For this project it uses data from movies, names and genre. On the website, the person can chat messages and leave a comment/review on that movie or actor.
 
+
+
+
 ### Steps to run the server
-`step 1: Type npm install to install node modules dependencies`
+ step 1: Type `npm install` to install node modules dependencies
 
-`step 2: Type npm run start`
+ step 2: Type `npm run start`
 
-`step 3: Your server should be running properly. Viola!`
+ step 3: Your server should be running properly. Viola!
 
 ## Additional instructions:
 
@@ -84,14 +87,6 @@ https://drive.google.com/drive/folders/1Rpm_GR7gxBqe39H9yKer-ueIE0uuoMCx?usp=sha
 
 [![Home-page.png](https://i.postimg.cc/R0Kk5TqM/Home-page.png)](https://postimg.cc/nsVRqBv5)
 
-* AI Chat-box
-
-[![AI-chatbox.png](https://i.postimg.cc/63hFT5dg/AI-chatbox.png)](https://postimg.cc/YGhds7Dz)
-
-* Movies page
-
-[![Movies.png](https://i.postimg.cc/3xD6mZXg/Movies.png)](https://postimg.cc/bZp3jkFJ)
-
 * Incorrect User authentication
 
 [![Incorrect-password.png](https://i.postimg.cc/9QpxGN4w/Incorrect-password.png)](https://postimg.cc/jDDQTc4R)
@@ -99,6 +94,35 @@ https://drive.google.com/drive/folders/1Rpm_GR7gxBqe39H9yKer-ueIE0uuoMCx?usp=sha
 * User Profile
 
 [![User-profile.png](https://i.postimg.cc/DzSq8C1T/User-profile.png)](https://postimg.cc/67N7PfHj)
+
+* Social Interaction 
+
+![image](https://user-images.githubusercontent.com/43709736/121599016-567bef80-c9f7-11eb-97b3-8db8009d0c30.png)
+
+
+### Extra Features 
+
+* Movie Search System Page
+
+[![Movies.png](https://i.postimg.cc/3xD6mZXg/Movies.png)](https://postimg.cc/bZp3jkFJ)
+
+![image](https://user-images.githubusercontent.com/43709736/121599016-567bef80-c9f7-11eb-97b3-8db8009d0c30.png)
+
+
+* Actors Search System Page
+
+![image](https://user-images.githubusercontent.com/43709736/121597970-24b65900-c9f6-11eb-9a15-b5e9d4dfa950.png)
+
+![image](https://user-images.githubusercontent.com/43709736/121599128-7b706280-c9f7-11eb-8fd0-25fe76c23fdd.png)
+
+
+* AI Chat-box
+
+[![AI-chatbox.png](https://i.postimg.cc/63hFT5dg/AI-chatbox.png)](https://postimg.cc/YGhds7Dz)
+
+
+
+
 
 ## Authors and Contributor List:
 
