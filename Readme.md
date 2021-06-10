@@ -10,6 +10,14 @@ This project is a website available for any person that is able to browse for a 
 
 
 
+## Additional instructions:
+
+The following folder named `json` needs to be added inside the `public` folder. This folder has 3 files `IMDb names.json`, `IMDb names.json`,
+and `IMDb ratings.json`. We were not able to add these files onto github since they exceed the file size allowed on github. The `json` folder can be downloaded from this link: 
+https://drive.google.com/drive/folders/1Rpm_GR7gxBqe39H9yKer-ueIE0uuoMCx?usp=sharing
+
+ ### IMPORTANT
+ Please follow Additional Instructions first before to run the server.
 
 ### Steps to run the server
  step 1: Type `npm install` to install node modules dependencies
@@ -17,12 +25,8 @@ This project is a website available for any person that is able to browse for a 
  step 2: Type `npm run start`
 
  step 3: Your server should be running properly. Viola!
+ 
 
-## Additional instructions:
-
-The following folder named `json` needs to be added inside the `public` folder. This folder has 3 files `IMDb names.json`, `IMDb names.json`,
-and `IMDb ratings.json`. We were not able to add these files onto github since they exceed the file size allowed on github. The `json` folder can be downloaded from this link: 
-https://drive.google.com/drive/folders/1Rpm_GR7gxBqe39H9yKer-ueIE0uuoMCx?usp=sharing
 
 ### Design Features
 
