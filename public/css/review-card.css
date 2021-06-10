@@ -245,7 +245,9 @@
  .blog-card {
 	 display: flex;
 	 flex-direction: column;
-	 margin: 5px 0;
+	 /* margin: 5px 0; */
+   margin: auto;
+   width: 750px;
 	 box-shadow: 0 3px 7px -1px rgba(0, 0, 0, .1);
 	 margin-bottom: 1.6%;
 	 background: white;
