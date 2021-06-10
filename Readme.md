@@ -53,6 +53,9 @@ https://drive.google.com/drive/folders/1Rpm_GR7gxBqe39H9yKer-ueIE0uuoMCx?usp=sha
 
 *   `The chat-box currently only handles some specific queries, they can be found on the readme.md file.   `
 
+[![AI-chatbox.png](https://i.postimg.cc/63hFT5dg/AI-chatbox.png)](https://postimg.cc/YGhds7Dz)
+
+
 
 4. Social Interaction: <br>
 
