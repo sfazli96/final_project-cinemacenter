@@ -17,7 +17,7 @@ and `IMDb ratings.json`. We were not able to add these files onto github since t
 https://drive.google.com/drive/folders/1Rpm_GR7gxBqe39H9yKer-ueIE0uuoMCx?usp=sharing
 
  ### IMPORTANT
- Please follow Additional Instructions first before to run the server.
+ Please follow Additional Instructions first before running the server.
 
 ### Steps to run the server
  step 1: Type `npm install` to install node modules dependencies
