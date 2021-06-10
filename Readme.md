@@ -35,6 +35,9 @@ https://drive.google.com/drive/folders/1Rpm_GR7gxBqe39H9yKer-ueIE0uuoMCx?usp=sha
   *  `A new user can sign-up on the website by providing some basic information such as their name, email, username, location, favorite movie genre, and they can set a their password.`
 
  *   `When a user creates an account, their  information is stored inside the ‘users’ collection in our database, hosted by Firebase.`
+ 
+ ![image](https://user-images.githubusercontent.com/43709736/121608698-584daf00-ca07-11eb-9982-cee0d97181d5.png)
+
 
 
 2. User Authentication: <br>
@@ -58,6 +61,9 @@ https://drive.google.com/drive/folders/1Rpm_GR7gxBqe39H9yKer-ueIE0uuoMCx?usp=sha
 * `Other users can leave a thumbs up like to the reviews that are posted. `
 
 * `When a user reviews a movie, their review of the movie gets stored inside the ‘reviews’ collection in our database, hosted by Firebase.`
+
+![image](https://user-images.githubusercontent.com/43709736/121608560-17ee3100-ca07-11eb-9784-c016519b2b2f.png)
+
 
 
 ### Queries handled by the AI chatbox
