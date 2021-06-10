@@ -42,10 +42,6 @@ This project is a website available for any person that is able to browse for a 
 
 [![Home-page.png](https://i.postimg.cc/R0Kk5TqM/Home-page.png)](https://postimg.cc/nsVRqBv5)
 
-* AI Chat-box
-
-[![AI-chatbox.png](https://i.postimg.cc/63hFT5dg/AI-chatbox.png)](https://postimg.cc/YGhds7Dz)
-
 * Movies page
 
 [![Movies.png](https://i.postimg.cc/3xD6mZXg/Movies.png)](https://postimg.cc/bZp3jkFJ)
@@ -57,6 +53,25 @@ This project is a website available for any person that is able to browse for a 
 * User Profile
 
 [![User-profile.png](https://i.postimg.cc/DzSq8C1T/User-profile.png)](https://postimg.cc/67N7PfHj)
+
+
+### Extra Features 
+
+* Movie Search System Page
+
+![image](https://user-images.githubusercontent.com/43709736/121597860-09e3e480-c9f6-11eb-9c7c-bc6717ee85ca.png)
+
+* Actors Search System Page
+
+![image](https://user-images.githubusercontent.com/43709736/121597970-24b65900-c9f6-11eb-9a15-b5e9d4dfa950.png)
+
+* AI Chat-box
+
+[![AI-chatbox.png](https://i.postimg.cc/63hFT5dg/AI-chatbox.png)](https://postimg.cc/YGhds7Dz)
+
+
+
+
 
 ## Authors and Contributor List:
 
