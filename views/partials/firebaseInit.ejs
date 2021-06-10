@@ -45,6 +45,7 @@ https://firebase.google.com/docs/web/setup#available-libraries -->
                     // console.log("Currently logged in user: " + data);
                     const profileButton = document.getElementById('headerProfileButton');
                     profileButton.parentElement.style = "display: block";
+                    profileButton.innerText = data.username;
                     profileButton.href = `/profile/${data.username}`;
 
                     const logoutButton = document.getElementById('headerLogoutButton');

@@ -51,12 +51,12 @@ label {
 
 }   
 
-#usernameHeader {
+#headerProfileButton {
     margin: auto;
     color:white !important;
 }
 
-#usernameHeader:hover {
+#headerProfileButton:hover {
     text-decoration: underline;
 }
 
