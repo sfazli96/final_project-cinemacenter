@@ -22,9 +22,11 @@ https://drive.google.com/drive/folders/1Rpm_GR7gxBqe39H9yKer-ueIE0uuoMCx?usp=sha
 ### Steps to run the server
  step 1: Type `npm install` to install node modules dependencies
 
- step 2: Type `npm run start`
+ step 2: Make sure the json folder is in the public directory
 
- step 3: Your server should be running properly. Viola!
+ step 3: Type `npm run start`
+
+ step 4: Your server should be running properly. Viola!
  
 
 
