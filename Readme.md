@@ -20,11 +20,11 @@ https://drive.google.com/drive/folders/1Rpm_GR7gxBqe39H9yKer-ueIE0uuoMCx?usp=sha
  Please follow Additional Instructions first before running the server.
 
 ### Steps to run Docker
- Step 1: First build the docker image with this command: docker build --tag (name of the docker tag), example: docker build --tag node-docker
+ Step 1: First build the docker image with this command: `docker build --tag (name of the docker tag)`, example: `docker build --tag node-docker`
  
  Step 2: Then check that the docker image has been built: docker images
  
- Step 3: Next, we run an image inside of a container, we use the docker run command: docker run -d -p 3000:3000 (name of docker tag) example: docker run -d -p 3000:3000 node-docker
+ Step 3: Next, we run an image inside of a container, we use the docker run command: `docker run -d -p 3000:3000 (name of docker tag)` example: `docker run -d -p 3000:3000 node-docker`
  
  Step 4: Voila! The website is being run within Docker!
  
