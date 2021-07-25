@@ -19,17 +19,15 @@ https://drive.google.com/drive/folders/1Rpm_GR7gxBqe39H9yKer-ueIE0uuoMCx?usp=sha
  ### IMPORTANT
  Please follow Additional Instructions first before running the server.
 
-### Steps to run the server
- step 1: Type `npm install` to install node modules dependencies
-
- step 2: Make sure the json folder is in the public directory
-
- step 3: Type `npm run start`
-
- step 4: Your server should be running properly. Viola!
+### Steps to run Docker
+ Step 1: First build the docker image with this command: `docker build --tag (name of the docker tag)`, example: `docker build --tag node-docker`
  
-
-
+ Step 2: Then check that the docker image has been built: docker images
+ 
+ Step 3: Next, we run an image inside of a container, we use the docker run command: `docker run -d -p 3000:3000 (name of docker tag)` example: `docker run -d -p 3000:3000 node-docker`
+ 
+ Step 4: Voila! The website is being run within Docker!
+ 
 ### Design Features
 
 1. User Profiling: <br>
