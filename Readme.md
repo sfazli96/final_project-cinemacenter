@@ -20,7 +20,7 @@ https://drive.google.com/drive/folders/1Rpm_GR7gxBqe39H9yKer-ueIE0uuoMCx?usp=sha
  Please follow Additional Instructions first before running the server.
 
 ### Steps to run Docker
- Step 1: First build the docker image with this command: `docker build --tag (name of the docker tag)`, example: `docker build --tag node-docker`
+ Step 1: First build the docker image with this command: `docker build --tag (name of the docker tag) .`, example: `docker build --tag node-docker .`
  
  Step 2: Then check that the docker image has been built: docker images
  
