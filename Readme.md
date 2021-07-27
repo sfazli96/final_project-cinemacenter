@@ -27,7 +27,9 @@ https://drive.google.com/drive/folders/1Rpm_GR7gxBqe39H9yKer-ueIE0uuoMCx?usp=sha
  Download Docker for Linux: https://hub.docker.com/search?offering=community&operating_system=linux&q=&type=edition
 
 ### IMPORTANT 
-Please Download Docker Desktop first and docker extension in Visual Studio Code before running docker
+Please Download Docker Desktop first and docker extension in Visual Studio Code before running docker. 
+
+https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker
 
 ### Steps to run Docker
  Step 1: First build the docker image with this command: `docker build --tag (name of the docker tag) .`, example: `docker build --tag node-docker .`
