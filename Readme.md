@@ -20,9 +20,11 @@ https://drive.google.com/drive/folders/1Rpm_GR7gxBqe39H9yKer-ueIE0uuoMCx?usp=sha
  Please follow Additional Instructions first before running the server.
  
  ## Download Docker 
- Download Docker for Windows: https://www.docker.com/products/docker-desktop 
- Download Docker for Mac: https://hub.docker.com/editions/community/docker-ce-desktop-mac?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=header
- Download Docker for Linux: https://hub.docker.com/search?offering=community&operating_system=linux&q=&type=edition
+ Download Docker for Windows: `https://www.docker.com/products/docker-desktop`
+ 
+ Download Docker for Mac: `https://hub.docker.com/editions/community/docker-ce-desktop-mac?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=header`
+ 
+ Download Docker for Linux: `https://hub.docker.com/search?offering=community&operating_system=linux&q=&type=edition`
 
 ### IMPORTANT 
 Please Download Docker Desktop first and docker extension in Visual Studio Code before running docker
