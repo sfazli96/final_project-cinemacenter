@@ -38,7 +38,7 @@ https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker
  
  Step 3: Next, we run an image inside of a container, we use the docker run command: `docker run -d -p 3000:3000 (name of docker tag)` example: `docker run -d -p 3000:3000 node-docker`
  
- Step 4: Voila! The website is being run within Docker!
+ Step 4: Voila! Type in `localhost:3000` in the web browser. The website is being run within Docker!
  
 ### Design Features
 
